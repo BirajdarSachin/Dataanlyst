@@ -1,0 +1,96 @@
+2026-04-06 21:50:02,906 - INFO - Logging is working now
+2026-04-06 21:50:32,528 - INFO - Logging is working now
+2026-04-06 21:50:33,190 - INFO - Logging is working now
+2026-04-06 21:55:51,567 - INFO - Starting ETL...
+2026-04-06 21:55:54,292 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-06 21:55:54,292 - INFO - Extracted 278205 rows
+2026-04-06 21:57:07,404 - INFO - Starting ETL...
+2026-04-06 21:57:09,176 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-06 21:57:09,176 - INFO - An error occurred while extracting data: [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-06 21:57:09,177 - INFO - Extracted 278205 rows
+2026-04-06 21:57:22,601 - INFO - Starting ETL...
+2026-04-06 21:57:24,395 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-06 21:57:24,401 - INFO - An error occurred while extracting data: [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-06 21:57:24,401 - INFO - Extracted 278205 rows
+2026-04-06 21:59:04,994 - INFO - Starting ETL...
+2026-04-06 21:59:07,079 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-06 21:59:07,079 - INFO - Data successfully extracted from 278205 rows
+2026-04-06 21:59:07,080 - INFO - An error occurred while extracting data: [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-06 21:59:07,080 - INFO - Extracted 278205 rows
+2026-04-06 21:59:15,228 - INFO - Starting ETL...
+2026-04-06 21:59:17,161 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-06 21:59:17,162 - INFO - Data successfully extracted from 278205 rows
+2026-04-06 21:59:17,162 - INFO - An error occurred while extracting data: [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-06 22:01:12,110 - INFO - Starting ETL...
+2026-04-06 22:01:14,401 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-06 22:01:14,402 - INFO - Extracted 278205 rows from data/IPL.csv
+2026-04-06 22:01:14,402 - INFO - An error occurred while extracting data: [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-06 22:02:11,890 - INFO - Starting ETL...
+2026-04-06 22:02:14,132 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-06 22:02:14,132 - INFO - Extracted 278205 rows from data/IPL.csv
+2026-04-06 22:02:14,132 - ERROR - An error occurred while extracting data: [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-06 22:03:08,205 - INFO - Starting ETL...
+2026-04-06 22:03:10,440 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-06 22:03:10,440 - INFO - Extracted 278205 rows from data/IPL.csv
+2026-04-06 22:03:10,441 - ERROR - An error occurred while extracting data: [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-06 22:03:10,441 - INFO - ETL completed successfully.
+2026-04-06 22:04:12,249 - INFO - Starting ETL...
+2026-04-06 22:04:14,138 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-06 22:04:14,138 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-06 22:04:14,138 - ERROR - An error occurred while extracting data: [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-06 22:04:14,138 - INFO - ETL completed successfully.
+2026-04-06 22:25:49,979 - INFO - Starting ETL...
+2026-04-06 22:25:53,512 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-06 22:25:53,513 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-06 22:25:53,934 - INFO - Removed unnecessary columns if they existed.
+2026-04-06 22:25:54,280 - INFO - Missing values and duplicates handled by dropping rows.
+2026-04-06 22:25:54,281 - ERROR - An error occurred during data cleaning: 'DataFrame' object has no attribute 'logger'
+2026-04-06 22:25:54,282 - INFO - ETL completed successfully.
+2026-04-06 22:27:05,537 - INFO - Starting ETL...
+2026-04-06 22:27:07,548 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-06 22:27:07,548 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-06 22:27:07,549 - INFO - Removed unnecessary columns if they existed.
+2026-04-06 22:27:07,775 - INFO - Missing values and duplicates handled by dropping rows.
+2026-04-06 22:27:07,775 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-06 22:27:07,784 - INFO - Converted 'date' column to datetime.
+2026-04-06 22:27:07,784 - INFO - Filled missing 'runs_batter' values with 'batter_runs' where available.
+2026-04-06 22:27:07,785 - INFO - Removed 'batter_runs' column if it existed after filling missing values.
+2026-04-06 22:27:07,785 - INFO - Data cleaning completed successfully.
+2026-04-06 22:27:07,785 - INFO - ETL completed successfully.
+2026-04-06 22:47:20,416 - INFO - Starting ETL...
+2026-04-06 22:47:23,797 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-06 22:47:23,797 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-06 22:47:23,805 - INFO - Removed unnecessary columns if they existed.
+2026-04-06 22:47:24,132 - INFO - Missing values and duplicates handled by dropping rows.
+2026-04-06 22:47:24,132 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-06 22:47:24,139 - INFO - Converted 'date' column to datetime.
+2026-04-06 22:47:24,140 - INFO - Filled missing 'runs_batter' values with 'batter_runs' where available.
+2026-04-06 22:47:24,141 - INFO - Removed 'batter_runs' column if it existed after filling missing values.
+2026-04-06 22:47:24,141 - INFO - Data cleaning completed successfully.
+2026-04-06 22:47:24,194 - ERROR - Validation failed: Empty dataset
+2026-04-06 22:47:24,198 - ERROR - An error occurred while creating dimension tables: 'DataFrame' object has no attribute 'unique'
+2026-04-06 22:47:24,198 - INFO - Creating mapping dictionaries for dimension tables.
+2026-04-06 22:47:24,198 - ERROR - An error occurred while creating fact tables: 'NoneType' object has no attribute 'team_name'
+2026-04-06 22:47:24,198 - INFO - ETL completed successfully.
+2026-04-07 22:37:10,064 - INFO - Starting ETL...
+2026-04-07 22:37:12,640 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-07 22:37:12,640 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-07 22:37:12,642 - INFO - Removed unnecessary columns if they existed.
+2026-04-07 22:37:12,886 - INFO - Missing values and duplicates handled by dropping rows.
+2026-04-07 22:37:12,886 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-07 22:37:12,887 - INFO - Converted 'date' column to datetime.
+2026-04-07 22:37:12,887 - INFO - Filled missing 'runs_batter' values with 'batter_runs' where available.
+2026-04-07 22:37:12,888 - INFO - Removed 'batter_runs' column if it existed after filling missing values.
+2026-04-07 22:37:12,888 - INFO - Data cleaning completed successfully.
+2026-04-07 22:37:12,921 - INFO - ETL completed successfully.
+2026-04-07 22:37:56,029 - INFO - Starting ETL...
+2026-04-07 22:37:58,075 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-07 22:37:58,075 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-07 22:37:58,076 - INFO - Removed unnecessary columns if they existed.
+2026-04-07 22:37:58,325 - INFO - Missing values and duplicates handled by dropping rows.
+2026-04-07 22:37:58,326 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-07 22:37:58,327 - INFO - Converted 'date' column to datetime.
+2026-04-07 22:37:58,328 - INFO - Filled missing 'runs_batter' values with 'batter_runs' where available.
+2026-04-07 22:37:58,329 - INFO - Removed 'batter_runs' column if it existed after filling missing values.
+2026-04-07 22:37:58,329 - INFO - Data cleaning completed successfully.
+2026-04-07 22:37:58,380 - INFO - ETL completed successfully.
