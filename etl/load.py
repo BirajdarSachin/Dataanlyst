@@ -235,6 +235,73 @@ class Load:
             logger.error(f"Error getting count for table '{table_name}': {e}")
             return 0
 
+    def load_incremental(self, df, table_name, key_column):
+        """
+        Load data incrementally to database table, only adding new records based on key column.
+
+        Parameters:
+        df (pd.DataFrame): DataFrame to load
+        table_name (str): Target table name
+        key_column (str): Column name to use for identifying new records (e.g., 'date', 'id', 'match_id')
+
+        Returns:
+        int: Number of rows loaded
+        """
+        try:
+            logger.info(f"Starting incremental load for table '{table_name}' using key column '{key_column}'...")
+
+            # Check if table exists
+            check_query = f"SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = '{table_name}'"
+            
+            if self.engine:
+                with self.engine.connect() as conn:
+                    result = conn.execute(text(check_query))
+                    table_exists = result.fetchone()[0] > 0
+            else:
+                self.cursor.execute(check_query)
+                table_exists = self.cursor.fetchone()[0] > 0
+
+            # If table doesn't exist, create and load all data
+            if not table_exists:
+                logger.info(f"Table '{table_name}' does not exist. Creating and loading all data...")
+                self.create_table_if_not_exists(table_name, df)
+                self.load_dataframe(df, table_name, if_exists='append')
+                rows_loaded = len(df)
+                logger.info(f"Loaded {rows_loaded} rows to new table '{table_name}'.")
+                return rows_loaded
+
+            # Get max value of key column from existing table
+            max_query = f"SELECT MAX([{key_column}]) FROM {table_name}"
+            
+            if self.engine:
+                with self.engine.connect() as conn:
+                    result = conn.execute(text(max_query))
+                    max_value = result.fetchone()[0]
+            else:
+                self.cursor.execute(max_query)
+                max_value = self.cursor.fetchone()[0]
+
+            # Filter DataFrame to only include records greater than max_value
+            if max_value is not None:
+                df_new = df[df[key_column] > max_value]
+                logger.info(f"Max {key_column} in table: {max_value}. Found {len(df_new)} new records to load.")
+            else:
+                df_new = df
+                logger.info(f"No existing data found. Loading all {len(df_new)} records.")
+
+            # Load only new records
+            if len(df_new) > 0:
+                self.load_dataframe(df_new, table_name, if_exists='append')
+                logger.info(f"Incremental load completed: {len(df_new)} new rows added to '{table_name}'.")
+                return len(df_new)
+            else:
+                logger.info(f"No new records to load for table '{table_name}'.")
+                return 0
+
+        except Exception as e:
+            logger.error(f"Error during incremental load for table '{table_name}': {e}")
+            raise
+
     def __enter__(self):
         """
         Context manager entry.

@@ -746,3 +746,140 @@
 2026-04-09 22:14:13,844 - INFO - All dimension tables loaded successfully.
 2026-04-09 22:14:13,844 - INFO - Database connection closed successfully.
 2026-04-09 22:14:13,845 - INFO - ETL completed successfully.
+2026-04-09 22:32:26,637 - INFO - Starting ETL...
+2026-04-09 22:32:26,641 - ERROR - An error occurred while extracting data : [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-09 22:32:28,826 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-09 22:32:28,826 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-09 22:32:28,831 - INFO - Removed unnecessary columns if they existed.
+2026-04-09 22:32:29,672 - INFO -  Duplicates handled by dropping rows.
+2026-04-09 22:32:29,673 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-09 22:32:29,704 - INFO - Converted 'date' column to datetime.
+2026-04-09 22:32:29,704 - INFO - Data cleaning completed successfully.
+2026-04-09 22:32:29,706 - INFO - Validation completed successfully.
+2026-04-09 22:32:29,774 - INFO - Dimension table for teams created successfully.
+2026-04-09 22:32:29,866 - INFO - Dimension table for players created successfully.
+2026-04-09 22:32:29,908 - INFO - Dimension table for venues created successfully.
+2026-04-09 22:32:29,914 - INFO - Dimension table for umpires created successfully.
+2026-04-09 22:32:29,921 - INFO - Dimension table for wickets created successfully.
+2026-04-09 22:32:29,954 - INFO - Dimension table for dates created successfully.
+2026-04-09 22:32:29,974 - INFO - Dimension table for stage created successfully.
+2026-04-09 22:32:29,974 - INFO - Dimension tables created successfully.
+2026-04-09 22:32:29,974 - INFO - Using PyODBC connection string.
+2026-04-09 22:32:45,758 - ERROR - Failed to connect to database: ('08001', '[08001] [Microsoft][ODBC Driver 18 for SQL Server]TCP Provider: No connection could be made because the target machine actively refused it.\r\n (10061) (SQLDriverConnect); [08001] [Microsoft][ODBC Driver 18 for SQL Server]Login timeout expired (0); [08001] [Microsoft][ODBC Driver 18 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to DESKTOP-AKHSPQL\\MS_SQL_2019,1433. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. (10061)')
+2026-04-09 22:33:06,111 - INFO - Starting ETL...
+2026-04-09 22:33:06,112 - ERROR - An error occurred while extracting data : [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-09 22:33:07,843 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-09 22:33:07,844 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-09 22:33:07,845 - INFO - Removed unnecessary columns if they existed.
+2026-04-09 22:33:08,771 - INFO -  Duplicates handled by dropping rows.
+2026-04-09 22:33:08,772 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-09 22:33:08,791 - INFO - Converted 'date' column to datetime.
+2026-04-09 22:33:08,791 - INFO - Data cleaning completed successfully.
+2026-04-09 22:33:08,792 - INFO - Validation completed successfully.
+2026-04-09 22:33:08,851 - INFO - Dimension table for teams created successfully.
+2026-04-09 22:33:08,937 - INFO - Dimension table for players created successfully.
+2026-04-09 22:33:08,984 - INFO - Dimension table for venues created successfully.
+2026-04-09 22:33:08,990 - INFO - Dimension table for umpires created successfully.
+2026-04-09 22:33:08,997 - INFO - Dimension table for wickets created successfully.
+2026-04-09 22:33:09,034 - INFO - Dimension table for dates created successfully.
+2026-04-09 22:33:09,055 - INFO - Dimension table for stage created successfully.
+2026-04-09 22:33:09,055 - INFO - Dimension tables created successfully.
+2026-04-09 22:33:09,055 - INFO - Using PyODBC connection string.
+2026-04-09 22:33:24,819 - ERROR - Failed to connect to database: ('08001', '[08001] [Microsoft][ODBC Driver 18 for SQL Server]TCP Provider: No connection could be made because the target machine actively refused it.\r\n (10061) (SQLDriverConnect); [08001] [Microsoft][ODBC Driver 18 for SQL Server]Login timeout expired (0); [08001] [Microsoft][ODBC Driver 18 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to DESKTOP-AKHSPQL\\MS_SQL_2019,1433. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. (10061)')
+2026-04-09 22:39:02,104 - INFO - Starting ETL...
+2026-04-09 22:39:02,114 - ERROR - An error occurred while extracting data : [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-09 22:39:04,488 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-09 22:39:04,488 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-09 22:39:04,497 - INFO - Removed unnecessary columns if they existed.
+2026-04-09 22:39:05,413 - INFO -  Duplicates handled by dropping rows.
+2026-04-09 22:39:05,416 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-09 22:39:05,448 - INFO - Converted 'date' column to datetime.
+2026-04-09 22:39:05,448 - INFO - Data cleaning completed successfully.
+2026-04-09 22:39:05,450 - INFO - Validation completed successfully.
+2026-04-09 22:39:05,516 - INFO - Dimension table for teams created successfully.
+2026-04-09 22:39:05,610 - INFO - Dimension table for players created successfully.
+2026-04-09 22:39:05,654 - INFO - Dimension table for venues created successfully.
+2026-04-09 22:39:05,666 - INFO - Dimension table for umpires created successfully.
+2026-04-09 22:39:05,673 - INFO - Dimension table for wickets created successfully.
+2026-04-09 22:39:05,713 - INFO - Dimension table for dates created successfully.
+2026-04-09 22:39:05,733 - INFO - Dimension table for stage created successfully.
+2026-04-09 22:39:05,733 - INFO - Dimension tables created successfully.
+2026-04-09 22:39:05,733 - INFO - Using PyODBC connection string.
+2026-04-09 22:39:06,493 - INFO - Database connection established using PyODBC.
+2026-04-09 22:39:06,494 - INFO - Starting to load dimension tables...
+2026-04-09 22:39:06,658 - INFO - Table 'dim_team' created or already exists.
+2026-04-09 22:39:06,746 - ERROR - Error loading data to table 'dim_team': ('23000', "[23000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Violation of PRIMARY KEY constraint 'PK__dim_team__F82DEDBCE73C9AAE'. Cannot insert duplicate key in object 'dbo.dim_team'. The duplicate key value is (1). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]The statement has been terminated. (3621)")
+2026-04-09 22:39:06,746 - ERROR - Error loading dimension tables: ('23000', "[23000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Violation of PRIMARY KEY constraint 'PK__dim_team__F82DEDBCE73C9AAE'. Cannot insert duplicate key in object 'dbo.dim_team'. The duplicate key value is (1). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]The statement has been terminated. (3621)")
+2026-04-09 22:39:06,747 - INFO - Database connection closed successfully.
+2026-04-09 22:39:58,318 - INFO - Starting ETL...
+2026-04-09 22:39:58,319 - ERROR - An error occurred while extracting data : [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-09 22:40:00,052 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-09 22:40:00,052 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-09 22:40:00,054 - INFO - Removed unnecessary columns if they existed.
+2026-04-09 22:40:00,842 - INFO -  Duplicates handled by dropping rows.
+2026-04-09 22:40:00,843 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-09 22:40:00,864 - INFO - Converted 'date' column to datetime.
+2026-04-09 22:40:00,864 - INFO - Data cleaning completed successfully.
+2026-04-09 22:40:00,865 - INFO - Validation completed successfully.
+2026-04-09 22:40:00,926 - INFO - Dimension table for teams created successfully.
+2026-04-09 22:40:01,014 - INFO - Dimension table for players created successfully.
+2026-04-09 22:40:01,054 - INFO - Dimension table for venues created successfully.
+2026-04-09 22:40:01,059 - INFO - Dimension table for umpires created successfully.
+2026-04-09 22:40:01,065 - INFO - Dimension table for wickets created successfully.
+2026-04-09 22:40:01,097 - INFO - Dimension table for dates created successfully.
+2026-04-09 22:40:01,116 - INFO - Dimension table for stage created successfully.
+2026-04-09 22:40:01,116 - INFO - Dimension tables created successfully.
+2026-04-09 22:40:01,116 - INFO - Using PyODBC connection string.
+2026-04-09 22:40:01,194 - INFO - Database connection established using PyODBC.
+2026-04-09 22:40:01,194 - INFO - Starting to load dimension tables...
+2026-04-09 22:40:01,374 - INFO - Table 'dim_team' created or already exists.
+2026-04-09 22:40:01,546 - INFO - Data loaded successfully to table 'dim_team' using PyODBC.
+2026-04-09 22:40:01,562 - INFO - Table 'dim_player' created or already exists.
+2026-04-09 22:40:02,131 - INFO - Data loaded successfully to table 'dim_player' using PyODBC.
+2026-04-09 22:40:02,145 - INFO - Table 'dim_venue' created or already exists.
+2026-04-09 22:40:02,266 - INFO - Data loaded successfully to table 'dim_venue' using PyODBC.
+2026-04-09 22:40:02,293 - INFO - Table 'dim_date' created or already exists.
+2026-04-09 22:40:02,847 - INFO - Data loaded successfully to table 'dim_date' using PyODBC.
+2026-04-09 22:40:02,865 - INFO - Table 'dim_umpires' created or already exists.
+2026-04-09 22:40:02,925 - INFO - Data loaded successfully to table 'dim_umpires' using PyODBC.
+2026-04-09 22:40:02,933 - INFO - Table 'dim_wickets' created or already exists.
+2026-04-09 22:40:02,985 - INFO - Data loaded successfully to table 'dim_wickets' using PyODBC.
+2026-04-09 22:40:02,985 - INFO - All dimension tables loaded successfully.
+2026-04-09 22:40:02,986 - INFO - Database connection closed successfully.
+2026-04-09 22:40:02,986 - INFO - ETL completed successfully.
+2026-04-09 22:43:13,407 - INFO - Starting ETL...
+2026-04-09 22:43:13,408 - ERROR - An error occurred while extracting data : [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-09 22:43:15,223 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-09 22:43:15,223 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-09 22:43:15,224 - INFO - Removed unnecessary columns if they existed.
+2026-04-09 22:43:16,044 - INFO -  Duplicates handled by dropping rows.
+2026-04-09 22:43:16,045 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-09 22:43:16,065 - INFO - Converted 'date' column to datetime.
+2026-04-09 22:43:16,065 - INFO - Data cleaning completed successfully.
+2026-04-09 22:43:16,066 - INFO - Validation completed successfully.
+2026-04-09 22:43:16,130 - INFO - Dimension table for teams created successfully.
+2026-04-09 22:43:16,226 - INFO - Dimension table for players created successfully.
+2026-04-09 22:43:16,278 - INFO - Dimension table for venues created successfully.
+2026-04-09 22:43:16,284 - INFO - Dimension table for umpires created successfully.
+2026-04-09 22:43:16,292 - INFO - Dimension table for wickets created successfully.
+2026-04-09 22:43:16,334 - INFO - Dimension table for dates created successfully.
+2026-04-09 22:43:16,359 - INFO - Dimension table for stage created successfully.
+2026-04-09 22:43:16,359 - INFO - Dimension tables created successfully.
+2026-04-09 22:43:16,359 - INFO - Using PyODBC connection string.
+2026-04-09 22:43:16,409 - INFO - Database connection established using PyODBC.
+2026-04-09 22:43:16,409 - INFO - Starting to load dimension tables...
+2026-04-09 22:43:16,417 - INFO - Table 'dim_team' created or already exists.
+2026-04-09 22:43:16,453 - INFO - Data loaded successfully to table 'dim_team' using PyODBC.
+2026-04-09 22:43:16,460 - INFO - Table 'dim_player' created or already exists.
+2026-04-09 22:43:17,033 - INFO - Data loaded successfully to table 'dim_player' using PyODBC.
+2026-04-09 22:43:17,046 - INFO - Table 'dim_venue' created or already exists.
+2026-04-09 22:43:17,153 - INFO - Data loaded successfully to table 'dim_venue' using PyODBC.
+2026-04-09 22:43:17,161 - INFO - Table 'dim_date' created or already exists.
+2026-04-09 22:43:17,684 - INFO - Data loaded successfully to table 'dim_date' using PyODBC.
+2026-04-09 22:43:17,689 - INFO - Table 'dim_umpires' created or already exists.
+2026-04-09 22:43:17,751 - INFO - Data loaded successfully to table 'dim_umpires' using PyODBC.
+2026-04-09 22:43:17,755 - INFO - Table 'dim_wickets' created or already exists.
+2026-04-09 22:43:17,797 - INFO - Data loaded successfully to table 'dim_wickets' using PyODBC.
+2026-04-09 22:43:17,798 - INFO - All dimension tables loaded successfully.
+2026-04-09 22:43:17,799 - INFO - Database connection closed successfully.
+2026-04-09 22:43:17,799 - INFO - ETL completed successfully.
