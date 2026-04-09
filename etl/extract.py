@@ -19,5 +19,5 @@ def extract_data(file_path):
         logger.info(f"Extracted {len(data)} rows from source '{file_path}' ")
         return data
     except Exception as e:
-        logger.error(f"An error occurred while extracting data: {e}")
+        logger.error(f"An error occurred while extracting data : {e}")
         return None

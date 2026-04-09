@@ -52,25 +52,40 @@ def create_dim_tables(df):
         logger.info("Dimension table for players created successfully.")
 
 
-        dim_venue = df[["venue", "city"]].drop_duplicates()
+        dim_venue_1 = df[["venue", "city"]].drop_duplicates()
+        dim_venue = dim_venue_1['venue']+" - "+dim_venue_1['city']
+        dim_venue = pd.DataFrame({"venue": dim_venue})
         dim_venue["venue_id"] = range(1, len(dim_venue)+1)
         logger.info("Dimension table for venues created successfully.")
+
+        dim_umpires = pd.DataFrame({"umpire_name":df['umpire'].dropna().drop_duplicates().sort_values()})
+        dim_umpires['umpire_id'] = range(1, len(dim_umpires) + 1)
+        logger.info("Dimension table for umpires created successfully.")
+
+        dim_wickets=pd.DataFrame({"wiket_type":df['wicket_kind'].dropna().drop_duplicates().sort_values()})
+        dim_wickets['wicket_id'] = range(1, len(dim_wickets) + 1)
+        logger.info("Dimension table for wickets created successfully.")
 
         dim_date = df[["date", "day", "month", "year", "season"]].drop_duplicates()
         dim_date["date_id"] = range(1, len(dim_date)+1)
         logger.info("Dimension table for dates created successfully.")
+
+        dim_stage = pd.DataFrame({"stage":df['stage'].dropna().drop_duplicates().sort_values()})
+        dim_stage['stage_id']=range(1, len(dim_stage) + 1)
+        logger.info("Dimension table for stage created successfully.")
+
         logger.info("Dimension tables created successfully.")
 
-        return dim_team, dim_player, dim_venue, dim_date
+        return dim_team, dim_player, dim_venue, dim_date, dim_umpires, dim_wickets,dim_stage
 
     except Exception as e:
         logger.error(f"An error occurred while creating dimension tables: {e}")
-        return None, None, None, None
+        return None, None, None, None, None, None
     
 
     
 
-def create_fact_tables(df, dim_team, dim_player, dim_venue, dim_date):
+def create_fact_tables(df, dim_team, dim_player, dim_venue, dim_date ,dim_umpires, dim_wickets ):
     try:
         logger.info("Creating mapping dictionaries for dimension tables.")
         team_map = dict(zip(dim_team.team_name, dim_team.team_id))

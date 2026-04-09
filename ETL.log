@@ -94,3 +94,655 @@
 2026-04-07 22:37:58,329 - INFO - Removed 'batter_runs' column if it existed after filling missing values.
 2026-04-07 22:37:58,329 - INFO - Data cleaning completed successfully.
 2026-04-07 22:37:58,380 - INFO - ETL completed successfully.
+2026-04-08 20:37:49,647 - INFO - Starting ETL...
+2026-04-08 20:37:52,571 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-08 20:37:52,571 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-08 20:37:52,576 - INFO - Removed unnecessary columns if they existed.
+2026-04-08 20:37:53,427 - INFO -  Duplicates handled by dropping rows.
+2026-04-08 20:37:53,429 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-08 20:37:53,455 - INFO - Converted 'date' column to datetime.
+2026-04-08 20:37:53,455 - INFO - Data cleaning completed successfully.
+2026-04-08 20:37:53,456 - INFO - Validation completed successfully.
+2026-04-08 20:37:53,528 - INFO - Dimension table for teams created successfully.
+2026-04-08 20:37:53,625 - INFO - Dimension table for players created successfully.
+2026-04-08 20:37:53,675 - INFO - Dimension table for venues created successfully.
+2026-04-08 20:37:53,729 - INFO - Dimension table for dates created successfully.
+2026-04-08 20:37:53,730 - INFO - Dimension tables created successfully.
+2026-04-08 20:37:53,730 - INFO - Creating mapping dictionaries for dimension tables.
+2026-04-08 20:37:53,733 - INFO - Mapping dictionaries for dimension tables created successfully.
+2026-04-08 20:37:53,965 - INFO - Mapped team names to team IDs in fact deliveries.
+2026-04-08 20:37:54,066 - INFO - Mapped player names to player IDs in fact deliveries.
+2026-04-08 20:37:54,095 - INFO - Mapped venue names to venue IDs and dates to date IDs in fact deliveries.
+2026-04-08 20:37:54,107 - INFO - Fact deliveries table created successfully.
+2026-04-08 20:37:54,208 - INFO - Aggregated match-level data for fact matches.
+2026-04-08 20:37:54,215 - INFO - Fact tables created successfully.
+2026-04-08 20:37:54,215 - INFO - ETL completed successfully.
+2026-04-08 20:38:56,596 - INFO - Starting ETL...
+2026-04-08 20:38:56,596 - ERROR - An error occurred while extracting data: [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-08 20:38:58,444 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-08 20:38:58,445 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-08 20:38:58,446 - INFO - Removed unnecessary columns if they existed.
+2026-04-08 20:38:59,272 - INFO -  Duplicates handled by dropping rows.
+2026-04-08 20:38:59,273 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-08 20:38:59,293 - INFO - Converted 'date' column to datetime.
+2026-04-08 20:38:59,293 - INFO - Data cleaning completed successfully.
+2026-04-08 20:38:59,294 - INFO - Validation completed successfully.
+2026-04-08 20:38:59,364 - INFO - Dimension table for teams created successfully.
+2026-04-08 20:38:59,468 - INFO - Dimension table for players created successfully.
+2026-04-08 20:38:59,513 - INFO - Dimension table for venues created successfully.
+2026-04-08 20:38:59,550 - INFO - Dimension table for dates created successfully.
+2026-04-08 20:38:59,550 - INFO - Dimension tables created successfully.
+2026-04-08 20:38:59,550 - INFO - Creating mapping dictionaries for dimension tables.
+2026-04-08 20:38:59,552 - INFO - Mapping dictionaries for dimension tables created successfully.
+2026-04-08 20:38:59,683 - INFO - Mapped team names to team IDs in fact deliveries.
+2026-04-08 20:38:59,717 - INFO - Mapped player names to player IDs in fact deliveries.
+2026-04-08 20:38:59,732 - INFO - Mapped venue names to venue IDs and dates to date IDs in fact deliveries.
+2026-04-08 20:38:59,737 - INFO - Fact deliveries table created successfully.
+2026-04-08 20:38:59,804 - INFO - Aggregated match-level data for fact matches.
+2026-04-08 20:38:59,806 - INFO - Fact tables created successfully.
+2026-04-08 20:38:59,807 - INFO - ETL completed successfully.
+2026-04-08 20:40:16,978 - INFO - Starting ETL...
+2026-04-08 20:40:16,978 - ERROR - An error occurred while extracting data from source 'data/IPL1.csv: [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-08 20:40:18,908 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-08 20:40:18,908 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-08 20:40:18,910 - INFO - Removed unnecessary columns if they existed.
+2026-04-08 20:40:19,751 - INFO -  Duplicates handled by dropping rows.
+2026-04-08 20:40:19,753 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-08 20:40:19,783 - INFO - Converted 'date' column to datetime.
+2026-04-08 20:40:19,783 - INFO - Data cleaning completed successfully.
+2026-04-08 20:40:19,785 - INFO - Validation completed successfully.
+2026-04-08 20:40:19,869 - INFO - Dimension table for teams created successfully.
+2026-04-08 20:40:19,965 - INFO - Dimension table for players created successfully.
+2026-04-08 20:40:20,012 - INFO - Dimension table for venues created successfully.
+2026-04-08 20:40:20,060 - INFO - Dimension table for dates created successfully.
+2026-04-08 20:40:20,060 - INFO - Dimension tables created successfully.
+2026-04-08 20:40:20,060 - INFO - Creating mapping dictionaries for dimension tables.
+2026-04-08 20:40:20,062 - INFO - Mapping dictionaries for dimension tables created successfully.
+2026-04-08 20:40:20,260 - INFO - Mapped team names to team IDs in fact deliveries.
+2026-04-08 20:40:20,306 - INFO - Mapped player names to player IDs in fact deliveries.
+2026-04-08 20:40:20,327 - INFO - Mapped venue names to venue IDs and dates to date IDs in fact deliveries.
+2026-04-08 20:40:20,335 - INFO - Fact deliveries table created successfully.
+2026-04-08 20:40:20,416 - INFO - Aggregated match-level data for fact matches.
+2026-04-08 20:40:20,421 - INFO - Fact tables created successfully.
+2026-04-08 20:40:20,421 - INFO - ETL completed successfully.
+2026-04-08 21:33:20,186 - INFO - Starting ETL...
+2026-04-08 21:33:20,202 - ERROR - An error occurred while extracting data from source 'data/IPL1.csv: [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-08 21:33:24,035 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-08 21:33:24,035 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-08 21:33:24,047 - INFO - Removed unnecessary columns if they existed.
+2026-04-08 21:33:24,870 - INFO -  Duplicates handled by dropping rows.
+2026-04-08 21:33:24,873 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-08 21:33:24,905 - INFO - Converted 'date' column to datetime.
+2026-04-08 21:33:24,905 - INFO - Data cleaning completed successfully.
+2026-04-08 21:33:24,906 - INFO - Validation completed successfully.
+2026-04-08 21:33:24,968 - INFO - Dimension table for teams created successfully.
+2026-04-08 21:33:25,059 - INFO - Dimension table for players created successfully.
+2026-04-08 21:33:25,103 - INFO - Dimension table for venues created successfully.
+2026-04-08 21:33:25,110 - INFO - Dimension table for umpires created successfully.
+2026-04-08 21:33:25,117 - INFO - Dimension table for wickets created successfully.
+2026-04-08 21:33:25,153 - INFO - Dimension table for dates created successfully.
+2026-04-08 21:33:25,153 - INFO - Dimension tables created successfully.
+2026-04-08 21:33:47,878 - INFO - Starting ETL...
+2026-04-08 21:33:47,878 - ERROR - An error occurred while extracting data from source 'data/IPL1.csv: [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-08 21:33:49,823 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-08 21:33:49,824 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-08 21:33:49,827 - INFO - Removed unnecessary columns if they existed.
+2026-04-08 21:33:50,699 - INFO -  Duplicates handled by dropping rows.
+2026-04-08 21:33:50,701 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-08 21:33:50,722 - INFO - Converted 'date' column to datetime.
+2026-04-08 21:33:50,722 - INFO - Data cleaning completed successfully.
+2026-04-08 21:33:50,723 - INFO - Validation completed successfully.
+2026-04-08 21:33:50,789 - INFO - Dimension table for teams created successfully.
+2026-04-08 21:33:50,888 - INFO - Dimension table for players created successfully.
+2026-04-08 21:33:50,934 - INFO - Dimension table for venues created successfully.
+2026-04-08 21:33:50,940 - INFO - Dimension table for umpires created successfully.
+2026-04-08 21:33:50,949 - INFO - Dimension table for wickets created successfully.
+2026-04-08 21:33:50,995 - INFO - Dimension table for dates created successfully.
+2026-04-08 21:33:50,995 - INFO - Dimension tables created successfully.
+2026-04-08 21:33:50,995 - INFO - Creating mapping dictionaries for dimension tables.
+2026-04-08 21:33:51,000 - INFO - Mapping dictionaries for dimension tables created successfully.
+2026-04-08 21:33:51,153 - INFO - Mapped team names to team IDs in fact deliveries.
+2026-04-08 21:33:51,190 - INFO - Mapped player names to player IDs in fact deliveries.
+2026-04-08 21:33:51,210 - INFO - Mapped venue names to venue IDs and dates to date IDs in fact deliveries.
+2026-04-08 21:33:51,217 - INFO - Fact deliveries table created successfully.
+2026-04-08 21:33:51,308 - INFO - Aggregated match-level data for fact matches.
+2026-04-08 21:33:51,313 - INFO - Fact tables created successfully.
+2026-04-08 21:33:51,314 - INFO - ETL completed successfully.
+2026-04-08 21:34:54,100 - INFO - Starting ETL...
+2026-04-08 21:34:54,102 - ERROR - An error occurred while extracting data from source 'data/IPL1.csv: [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-08 21:34:56,352 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-08 21:34:56,352 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-08 21:34:56,353 - INFO - Removed unnecessary columns if they existed.
+2026-04-08 21:34:57,232 - INFO -  Duplicates handled by dropping rows.
+2026-04-08 21:34:57,233 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-08 21:34:57,258 - INFO - Converted 'date' column to datetime.
+2026-04-08 21:34:57,258 - INFO - Data cleaning completed successfully.
+2026-04-08 21:34:57,259 - INFO - Validation completed successfully.
+2026-04-08 21:34:57,329 - INFO - Dimension table for teams created successfully.
+2026-04-08 21:34:57,433 - INFO - Dimension table for players created successfully.
+2026-04-08 21:34:57,483 - INFO - Dimension table for venues created successfully.
+2026-04-08 21:34:57,490 - INFO - Dimension table for umpires created successfully.
+2026-04-08 21:34:57,497 - INFO - Dimension table for wickets created successfully.
+2026-04-08 21:34:57,558 - INFO - Dimension table for dates created successfully.
+2026-04-08 21:34:57,558 - INFO - Dimension tables created successfully.
+2026-04-08 21:34:57,558 - ERROR - ETL failed: create_fact_tables() missing 1 required positional argument: 'dim_wickets'
+[32m2026-04-08 21:51:18,309 - INFO - Starting ETL...[0m
+[31m2026-04-08 21:51:18,323 - ERROR - An error occurred while extracting data : [Errno 2] No such file or directory: 'data/IPL1.csv'[0m
+[32m2026-04-08 21:51:20,905 - INFO - Data successfully extracted from data/IPL.csv[0m
+[32m2026-04-08 21:51:20,906 - INFO - Extracted 278205 rows from source 'data/IPL.csv' [0m
+[32m2026-04-08 21:51:20,915 - INFO - Removed unnecessary columns if they existed.[0m
+[32m2026-04-08 21:51:21,784 - INFO -  Duplicates handled by dropping rows.[0m
+[32m2026-04-08 21:51:21,787 - INFO - Standardized column names to lowercase and stripped whitespace.[0m
+[32m2026-04-08 21:51:21,818 - INFO - Converted 'date' column to datetime.[0m
+[32m2026-04-08 21:51:21,818 - INFO - Data cleaning completed successfully.[0m
+[32m2026-04-08 21:51:21,820 - INFO - Validation completed successfully.[0m
+[32m2026-04-08 21:51:21,882 - INFO - Dimension table for teams created successfully.[0m
+[32m2026-04-08 21:51:21,971 - INFO - Dimension table for players created successfully.[0m
+[32m2026-04-08 21:51:22,017 - INFO - Dimension table for venues created successfully.[0m
+[32m2026-04-08 21:51:22,024 - INFO - Dimension table for umpires created successfully.[0m
+[32m2026-04-08 21:51:22,031 - INFO - Dimension table for wickets created successfully.[0m
+[32m2026-04-08 21:51:22,066 - INFO - Dimension table for dates created successfully.[0m
+[32m2026-04-08 21:51:22,066 - INFO - Dimension tables created successfully.[0m
+[31m2026-04-08 21:51:22,066 - ERROR - ETL failed: create_fact_tables() missing 1 required positional argument: 'dim_wickets'[0m
+2026-04-08 21:55:49,985 - INFO - Starting ETL...
+2026-04-08 21:55:49,987 - ERROR - An error occurred while extracting data : [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-08 21:55:52,123 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-08 21:55:52,123 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-08 21:55:52,131 - INFO - Removed unnecessary columns if they existed.
+2026-04-08 21:55:52,905 - INFO -  Duplicates handled by dropping rows.
+2026-04-08 21:55:52,907 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-08 21:55:52,927 - INFO - Converted 'date' column to datetime.
+2026-04-08 21:55:52,927 - INFO - Data cleaning completed successfully.
+2026-04-08 21:55:52,928 - INFO - Validation completed successfully.
+2026-04-08 21:55:52,986 - INFO - Dimension table for teams created successfully.
+2026-04-08 21:55:53,067 - INFO - Dimension table for players created successfully.
+2026-04-08 21:55:53,117 - INFO - Dimension table for venues created successfully.
+2026-04-08 21:55:53,127 - INFO - Dimension table for umpires created successfully.
+2026-04-08 21:55:53,138 - INFO - Dimension table for wickets created successfully.
+2026-04-08 21:55:53,181 - INFO - Dimension table for dates created successfully.
+2026-04-08 21:55:53,182 - INFO - Dimension tables created successfully.
+2026-04-08 21:55:53,182 - ERROR - ETL failed: create_fact_tables() missing 1 required positional argument: 'dim_wickets'
+2026-04-08 22:09:45,981 - INFO - Starting ETL...
+2026-04-08 22:09:46,026 - ERROR - An error occurred while extracting data : [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-08 22:09:52,167 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-08 22:09:52,167 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-08 22:09:52,175 - INFO - Removed unnecessary columns if they existed.
+2026-04-08 22:09:53,001 - INFO -  Duplicates handled by dropping rows.
+2026-04-08 22:09:53,003 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-08 22:09:53,038 - INFO - Converted 'date' column to datetime.
+2026-04-08 22:09:53,038 - INFO - Data cleaning completed successfully.
+2026-04-08 22:09:53,041 - INFO - Validation completed successfully.
+2026-04-08 22:09:53,100 - INFO - Dimension table for teams created successfully.
+2026-04-08 22:09:53,192 - INFO - Dimension table for players created successfully.
+2026-04-08 22:09:53,240 - INFO - Dimension table for venues created successfully.
+2026-04-08 22:09:53,246 - INFO - Dimension table for umpires created successfully.
+2026-04-08 22:09:53,254 - INFO - Dimension table for wickets created successfully.
+2026-04-08 22:09:53,291 - INFO - Dimension table for dates created successfully.
+2026-04-08 22:09:53,291 - INFO - Dimension tables created successfully.
+2026-04-08 22:09:53,291 - INFO - Creating mapping dictionaries for dimension tables.
+2026-04-08 22:09:53,296 - INFO - Mapping dictionaries for dimension tables created successfully.
+2026-04-08 22:09:53,408 - INFO - Mapped team names to team IDs in fact deliveries.
+2026-04-08 22:09:53,440 - INFO - Mapped player names to player IDs in fact deliveries.
+2026-04-08 22:09:53,456 - INFO - Mapped venue names to venue IDs and dates to date IDs in fact deliveries.
+2026-04-08 22:09:53,461 - INFO - Fact deliveries table created successfully.
+2026-04-08 22:09:53,539 - INFO - Aggregated match-level data for fact matches.
+2026-04-08 22:09:53,542 - INFO - Fact tables created successfully.
+2026-04-08 22:09:53,542 - INFO - ETL completed successfully.
+2026-04-08 23:29:13,749 - INFO - Starting ETL...
+2026-04-08 23:29:13,786 - ERROR - An error occurred while extracting data : [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-08 23:29:16,682 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-08 23:29:16,683 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-08 23:29:16,687 - INFO - Removed unnecessary columns if they existed.
+2026-04-08 23:29:17,681 - INFO -  Duplicates handled by dropping rows.
+2026-04-08 23:29:17,683 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-08 23:29:17,713 - INFO - Converted 'date' column to datetime.
+2026-04-08 23:29:17,713 - INFO - Data cleaning completed successfully.
+2026-04-08 23:29:17,714 - INFO - Validation completed successfully.
+2026-04-08 23:29:17,784 - INFO - Dimension table for teams created successfully.
+2026-04-08 23:29:17,884 - INFO - Dimension table for players created successfully.
+2026-04-08 23:29:17,932 - INFO - Dimension table for venues created successfully.
+2026-04-08 23:29:17,943 - INFO - Dimension table for umpires created successfully.
+2026-04-08 23:29:17,951 - INFO - Dimension table for wickets created successfully.
+2026-04-08 23:29:17,998 - INFO - Dimension table for dates created successfully.
+2026-04-08 23:29:17,998 - INFO - Dimension tables created successfully.
+2026-04-08 23:29:17,998 - INFO - Creating mapping dictionaries for dimension tables.
+2026-04-08 23:29:18,002 - INFO - Mapping dictionaries for dimension tables created successfully.
+2026-04-08 23:29:18,123 - INFO - Mapped team names to team IDs in fact deliveries.
+2026-04-08 23:29:18,155 - INFO - Mapped player names to player IDs in fact deliveries.
+2026-04-08 23:29:18,172 - INFO - Mapped venue names to venue IDs and dates to date IDs in fact deliveries.
+2026-04-08 23:29:18,177 - INFO - Fact deliveries table created successfully.
+2026-04-08 23:29:18,250 - INFO - Aggregated match-level data for fact matches.
+2026-04-08 23:29:18,254 - INFO - Fact tables created successfully.
+2026-04-08 23:29:18,254 - INFO - ETL completed successfully.
+2026-04-08 23:30:20,293 - INFO - Starting ETL...
+2026-04-08 23:30:20,294 - ERROR - An error occurred while extracting data : [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-08 23:30:22,459 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-08 23:30:22,459 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-08 23:30:22,460 - INFO - Removed unnecessary columns if they existed.
+2026-04-08 23:30:23,616 - INFO -  Duplicates handled by dropping rows.
+2026-04-08 23:30:23,742 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-08 23:30:23,860 - INFO - Converted 'date' column to datetime.
+2026-04-08 23:30:23,860 - INFO - Data cleaning completed successfully.
+2026-04-08 23:30:23,894 - INFO - Validation completed successfully.
+2026-04-08 23:30:23,988 - INFO - Dimension table for teams created successfully.
+2026-04-08 23:30:24,107 - INFO - Dimension table for players created successfully.
+2026-04-08 23:30:24,159 - INFO - Dimension table for venues created successfully.
+2026-04-08 23:30:24,168 - INFO - Dimension table for umpires created successfully.
+2026-04-08 23:30:24,175 - INFO - Dimension table for wickets created successfully.
+2026-04-08 23:30:24,223 - INFO - Dimension table for dates created successfully.
+2026-04-08 23:30:24,223 - INFO - Dimension tables created successfully.
+2026-04-08 23:30:24,223 - INFO - Creating mapping dictionaries for dimension tables.
+2026-04-08 23:30:24,226 - INFO - Mapping dictionaries for dimension tables created successfully.
+2026-04-08 23:30:24,366 - INFO - Mapped team names to team IDs in fact deliveries.
+2026-04-08 23:30:24,406 - INFO - Mapped player names to player IDs in fact deliveries.
+2026-04-08 23:30:24,420 - INFO - Mapped venue names to venue IDs and dates to date IDs in fact deliveries.
+2026-04-08 23:30:24,428 - INFO - Fact deliveries table created successfully.
+2026-04-08 23:30:24,514 - INFO - Aggregated match-level data for fact matches.
+2026-04-08 23:30:24,519 - INFO - Fact tables created successfully.
+2026-04-08 23:30:24,519 - ERROR - ETL failed: 'PYODBC_CONNECTION_STRING'
+2026-04-08 23:33:07,407 - INFO - Starting ETL...
+2026-04-08 23:33:07,407 - ERROR - An error occurred while extracting data : [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-08 23:33:09,663 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-08 23:33:09,663 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-08 23:33:09,681 - INFO - Removed unnecessary columns if they existed.
+2026-04-08 23:33:10,558 - INFO -  Duplicates handled by dropping rows.
+2026-04-08 23:33:10,560 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-08 23:33:10,582 - INFO - Converted 'date' column to datetime.
+2026-04-08 23:33:10,583 - INFO - Data cleaning completed successfully.
+2026-04-08 23:33:10,584 - INFO - Validation completed successfully.
+2026-04-08 23:33:10,660 - INFO - Dimension table for teams created successfully.
+2026-04-08 23:33:10,763 - INFO - Dimension table for players created successfully.
+2026-04-08 23:33:10,821 - INFO - Dimension table for venues created successfully.
+2026-04-08 23:33:10,834 - INFO - Dimension table for umpires created successfully.
+2026-04-08 23:33:10,847 - INFO - Dimension table for wickets created successfully.
+2026-04-08 23:33:10,898 - INFO - Dimension table for dates created successfully.
+2026-04-08 23:33:10,898 - INFO - Dimension tables created successfully.
+2026-04-08 23:34:01,065 - INFO - Starting ETL...
+2026-04-08 23:34:01,067 - ERROR - An error occurred while extracting data : [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-08 23:34:03,461 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-08 23:34:03,462 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-08 23:34:03,471 - INFO - Removed unnecessary columns if they existed.
+2026-04-08 23:34:04,363 - INFO -  Duplicates handled by dropping rows.
+2026-04-08 23:34:04,366 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-08 23:34:04,394 - INFO - Converted 'date' column to datetime.
+2026-04-08 23:34:04,394 - INFO - Data cleaning completed successfully.
+2026-04-08 23:34:04,395 - INFO - Validation completed successfully.
+2026-04-08 23:34:04,460 - INFO - Dimension table for teams created successfully.
+2026-04-08 23:34:04,545 - INFO - Dimension table for players created successfully.
+2026-04-08 23:34:04,592 - INFO - Dimension table for venues created successfully.
+2026-04-08 23:34:04,599 - INFO - Dimension table for umpires created successfully.
+2026-04-08 23:34:04,607 - INFO - Dimension table for wickets created successfully.
+2026-04-08 23:34:04,645 - INFO - Dimension table for dates created successfully.
+2026-04-08 23:34:04,645 - INFO - Dimension tables created successfully.
+2026-04-08 23:34:41,018 - INFO - Starting ETL...
+2026-04-08 23:34:41,019 - ERROR - An error occurred while extracting data : [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-08 23:34:42,995 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-08 23:34:42,996 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-08 23:34:42,997 - INFO - Removed unnecessary columns if they existed.
+2026-04-08 23:34:43,854 - INFO -  Duplicates handled by dropping rows.
+2026-04-08 23:34:43,855 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-08 23:34:43,881 - INFO - Converted 'date' column to datetime.
+2026-04-08 23:34:43,881 - INFO - Data cleaning completed successfully.
+2026-04-08 23:34:43,883 - INFO - Validation completed successfully.
+2026-04-08 23:34:43,945 - INFO - Dimension table for teams created successfully.
+2026-04-08 23:34:44,053 - INFO - Dimension table for players created successfully.
+2026-04-08 23:34:44,128 - INFO - Dimension table for venues created successfully.
+2026-04-08 23:34:44,142 - INFO - Dimension table for umpires created successfully.
+2026-04-08 23:34:44,160 - INFO - Dimension table for wickets created successfully.
+2026-04-08 23:34:44,208 - INFO - Dimension table for dates created successfully.
+2026-04-08 23:34:44,208 - INFO - Dimension tables created successfully.
+2026-04-08 23:35:13,713 - INFO - Starting ETL...
+2026-04-08 23:35:13,714 - ERROR - An error occurred while extracting data : [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-08 23:35:15,765 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-08 23:35:15,766 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-08 23:35:15,767 - INFO - Removed unnecessary columns if they existed.
+2026-04-08 23:35:16,737 - INFO -  Duplicates handled by dropping rows.
+2026-04-08 23:35:16,739 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-08 23:35:16,772 - INFO - Converted 'date' column to datetime.
+2026-04-08 23:35:16,772 - INFO - Data cleaning completed successfully.
+2026-04-08 23:35:16,774 - INFO - Validation completed successfully.
+2026-04-08 23:35:16,856 - INFO - Dimension table for teams created successfully.
+2026-04-08 23:35:16,970 - INFO - Dimension table for players created successfully.
+2026-04-08 23:35:17,027 - INFO - Dimension table for venues created successfully.
+2026-04-08 23:35:17,037 - INFO - Dimension table for umpires created successfully.
+2026-04-08 23:35:17,049 - INFO - Dimension table for wickets created successfully.
+2026-04-08 23:35:17,097 - INFO - Dimension table for dates created successfully.
+2026-04-08 23:35:17,097 - INFO - Dimension tables created successfully.
+2026-04-08 23:35:53,720 - INFO - Starting ETL...
+2026-04-08 23:35:53,721 - ERROR - An error occurred while extracting data : [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-08 23:35:55,866 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-08 23:35:55,866 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-08 23:35:55,867 - INFO - Removed unnecessary columns if they existed.
+2026-04-08 23:35:56,885 - INFO -  Duplicates handled by dropping rows.
+2026-04-08 23:35:56,887 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-08 23:35:56,911 - INFO - Converted 'date' column to datetime.
+2026-04-08 23:35:56,912 - INFO - Data cleaning completed successfully.
+2026-04-08 23:35:56,913 - INFO - Validation completed successfully.
+2026-04-08 23:35:56,986 - INFO - Dimension table for teams created successfully.
+2026-04-08 23:35:57,070 - INFO - Dimension table for players created successfully.
+2026-04-08 23:35:57,111 - INFO - Dimension table for venues created successfully.
+2026-04-08 23:35:57,117 - INFO - Dimension table for umpires created successfully.
+2026-04-08 23:35:57,124 - INFO - Dimension table for wickets created successfully.
+2026-04-08 23:35:57,159 - INFO - Dimension table for dates created successfully.
+2026-04-08 23:35:57,159 - INFO - Dimension tables created successfully.
+2026-04-08 23:37:12,067 - INFO - Starting ETL...
+2026-04-08 23:37:12,068 - ERROR - An error occurred while extracting data : [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-08 23:37:14,264 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-08 23:37:14,264 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-08 23:37:14,265 - INFO - Removed unnecessary columns if they existed.
+2026-04-08 23:37:15,073 - INFO -  Duplicates handled by dropping rows.
+2026-04-08 23:37:15,074 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-08 23:37:15,092 - INFO - Converted 'date' column to datetime.
+2026-04-08 23:37:15,092 - INFO - Data cleaning completed successfully.
+2026-04-08 23:37:15,093 - INFO - Validation completed successfully.
+2026-04-08 23:37:15,154 - INFO - Dimension table for teams created successfully.
+2026-04-08 23:37:15,240 - INFO - Dimension table for players created successfully.
+2026-04-08 23:37:15,283 - INFO - Dimension table for venues created successfully.
+2026-04-08 23:37:15,289 - INFO - Dimension table for umpires created successfully.
+2026-04-08 23:37:15,298 - INFO - Dimension table for wickets created successfully.
+2026-04-08 23:37:15,341 - INFO - Dimension table for dates created successfully.
+2026-04-08 23:37:15,341 - INFO - Dimension tables created successfully.
+2026-04-08 23:37:15,341 - INFO - Using PyODBC connection string.
+2026-04-08 23:37:32,418 - ERROR - Failed to connect to database: ('08001', '[08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]SQL Server does not exist or access denied. (17) (SQLDriverConnect); [08001] [Microsoft][ODBC SQL Server Driver][DBNETLIB]ConnectionOpen (Connect()). (123)')
+2026-04-08 23:47:23,755 - INFO - Starting ETL...
+2026-04-08 23:47:23,760 - ERROR - An error occurred while extracting data : [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-08 23:47:26,795 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-08 23:47:26,795 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-08 23:47:28,323 - INFO - Removed unnecessary columns if they existed.
+2026-04-08 23:47:29,798 - INFO -  Duplicates handled by dropping rows.
+2026-04-08 23:47:29,801 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-08 23:47:29,836 - INFO - Converted 'date' column to datetime.
+2026-04-08 23:47:29,836 - INFO - Data cleaning completed successfully.
+2026-04-08 23:47:29,837 - INFO - Validation completed successfully.
+2026-04-08 23:47:29,900 - INFO - Dimension table for teams created successfully.
+2026-04-08 23:47:29,993 - INFO - Dimension table for players created successfully.
+2026-04-08 23:47:30,045 - INFO - Dimension table for venues created successfully.
+2026-04-08 23:47:30,054 - INFO - Dimension table for umpires created successfully.
+2026-04-08 23:47:30,061 - INFO - Dimension table for wickets created successfully.
+2026-04-08 23:47:30,104 - INFO - Dimension table for dates created successfully.
+2026-04-08 23:47:30,104 - INFO - Dimension tables created successfully.
+2026-04-08 23:47:30,104 - INFO - Using PyODBC connection string.
+2026-04-08 23:47:30,115 - ERROR - Failed to connect to database: ('IM002', '[IM002] [Microsoft][ODBC Driver Manager] Data source name not found and no default driver specified (0) (SQLDriverConnect)')
+2026-04-08 23:49:19,760 - INFO - Starting ETL...
+2026-04-08 23:49:19,773 - ERROR - An error occurred while extracting data : [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-08 23:49:22,248 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-08 23:49:22,248 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-08 23:49:22,258 - INFO - Removed unnecessary columns if they existed.
+2026-04-08 23:49:23,106 - INFO -  Duplicates handled by dropping rows.
+2026-04-08 23:49:23,108 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-08 23:49:23,137 - INFO - Converted 'date' column to datetime.
+2026-04-08 23:49:23,138 - INFO - Data cleaning completed successfully.
+2026-04-08 23:49:23,139 - INFO - Validation completed successfully.
+2026-04-08 23:49:23,205 - INFO - Dimension table for teams created successfully.
+2026-04-08 23:49:23,300 - INFO - Dimension table for players created successfully.
+2026-04-08 23:49:23,349 - INFO - Dimension table for venues created successfully.
+2026-04-08 23:49:23,357 - INFO - Dimension table for umpires created successfully.
+2026-04-08 23:49:23,365 - INFO - Dimension table for wickets created successfully.
+2026-04-08 23:49:23,410 - INFO - Dimension table for dates created successfully.
+2026-04-08 23:49:23,410 - INFO - Dimension tables created successfully.
+2026-04-08 23:50:03,319 - INFO - Starting ETL...
+2026-04-08 23:50:03,320 - ERROR - An error occurred while extracting data : [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-08 23:50:05,267 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-08 23:50:05,267 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-08 23:50:05,269 - INFO - Removed unnecessary columns if they existed.
+2026-04-08 23:50:06,276 - INFO -  Duplicates handled by dropping rows.
+2026-04-08 23:50:06,278 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-08 23:50:06,309 - INFO - Converted 'date' column to datetime.
+2026-04-08 23:50:06,309 - INFO - Data cleaning completed successfully.
+2026-04-08 23:50:06,311 - INFO - Validation completed successfully.
+2026-04-08 23:50:06,411 - INFO - Dimension table for teams created successfully.
+2026-04-08 23:50:06,513 - INFO - Dimension table for players created successfully.
+2026-04-08 23:50:06,560 - INFO - Dimension table for venues created successfully.
+2026-04-08 23:50:06,567 - INFO - Dimension table for umpires created successfully.
+2026-04-08 23:50:06,575 - INFO - Dimension table for wickets created successfully.
+2026-04-08 23:50:06,621 - INFO - Dimension table for dates created successfully.
+2026-04-08 23:50:06,621 - INFO - Dimension tables created successfully.
+2026-04-08 23:51:46,118 - INFO - Starting ETL...
+2026-04-08 23:51:46,121 - ERROR - An error occurred while extracting data : [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-08 23:51:48,384 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-08 23:51:48,384 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-08 23:51:48,390 - INFO - Removed unnecessary columns if they existed.
+2026-04-08 23:51:49,250 - INFO -  Duplicates handled by dropping rows.
+2026-04-08 23:51:49,251 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-08 23:51:49,281 - INFO - Converted 'date' column to datetime.
+2026-04-08 23:51:49,281 - INFO - Data cleaning completed successfully.
+2026-04-08 23:51:49,283 - INFO - Validation completed successfully.
+2026-04-08 23:51:49,349 - INFO - Dimension table for teams created successfully.
+2026-04-08 23:51:49,447 - INFO - Dimension table for players created successfully.
+2026-04-08 23:51:49,492 - INFO - Dimension table for venues created successfully.
+2026-04-08 23:51:49,499 - INFO - Dimension table for umpires created successfully.
+2026-04-08 23:51:49,505 - INFO - Dimension table for wickets created successfully.
+2026-04-08 23:51:49,541 - INFO - Dimension table for dates created successfully.
+2026-04-08 23:51:49,541 - INFO - Dimension tables created successfully.
+2026-04-08 23:51:49,552 - INFO - ETL completed successfully.
+2026-04-08 23:53:30,252 - INFO - Starting ETL...
+2026-04-08 23:53:30,253 - ERROR - An error occurred while extracting data : [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-08 23:53:32,156 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-08 23:53:32,156 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-08 23:53:32,157 - INFO - Removed unnecessary columns if they existed.
+2026-04-08 23:53:32,996 - INFO -  Duplicates handled by dropping rows.
+2026-04-08 23:53:32,997 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-08 23:53:33,016 - INFO - Converted 'date' column to datetime.
+2026-04-08 23:53:33,016 - INFO - Data cleaning completed successfully.
+2026-04-08 23:53:33,017 - INFO - Validation completed successfully.
+2026-04-08 23:53:33,078 - INFO - Dimension table for teams created successfully.
+2026-04-08 23:53:33,175 - INFO - Dimension table for players created successfully.
+2026-04-08 23:53:33,231 - INFO - Dimension table for venues created successfully.
+2026-04-08 23:53:33,239 - INFO - Dimension table for umpires created successfully.
+2026-04-08 23:53:33,246 - INFO - Dimension table for wickets created successfully.
+2026-04-08 23:53:33,281 - INFO - Dimension table for dates created successfully.
+2026-04-08 23:53:33,281 - INFO - Dimension tables created successfully.
+2026-04-08 23:53:50,115 - INFO - Starting ETL...
+2026-04-08 23:53:50,115 - ERROR - An error occurred while extracting data : [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-08 23:53:52,766 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-08 23:53:52,766 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-08 23:53:52,771 - INFO - Removed unnecessary columns if they existed.
+2026-04-08 23:53:53,825 - INFO -  Duplicates handled by dropping rows.
+2026-04-08 23:53:53,827 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-08 23:53:53,860 - INFO - Converted 'date' column to datetime.
+2026-04-08 23:53:53,861 - INFO - Data cleaning completed successfully.
+2026-04-08 23:53:53,862 - INFO - Validation completed successfully.
+2026-04-08 23:53:53,950 - INFO - Dimension table for teams created successfully.
+2026-04-08 23:53:54,045 - INFO - Dimension table for players created successfully.
+2026-04-08 23:53:54,095 - INFO - Dimension table for venues created successfully.
+2026-04-08 23:53:54,107 - INFO - Dimension table for umpires created successfully.
+2026-04-08 23:53:54,115 - INFO - Dimension table for wickets created successfully.
+2026-04-08 23:53:54,155 - INFO - Dimension table for dates created successfully.
+2026-04-08 23:53:54,155 - INFO - Dimension tables created successfully.
+2026-04-08 23:58:56,456 - INFO - Starting ETL...
+2026-04-08 23:58:56,460 - ERROR - An error occurred while extracting data : [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-08 23:58:58,886 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-08 23:58:58,886 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-08 23:58:58,892 - INFO - Removed unnecessary columns if they existed.
+2026-04-08 23:58:59,655 - INFO -  Duplicates handled by dropping rows.
+2026-04-08 23:58:59,657 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-08 23:58:59,683 - INFO - Converted 'date' column to datetime.
+2026-04-08 23:58:59,683 - INFO - Data cleaning completed successfully.
+2026-04-08 23:58:59,684 - INFO - Validation completed successfully.
+2026-04-08 23:58:59,756 - INFO - Dimension table for teams created successfully.
+2026-04-08 23:58:59,853 - INFO - Dimension table for players created successfully.
+2026-04-08 23:58:59,905 - INFO - Dimension table for venues created successfully.
+2026-04-08 23:58:59,913 - INFO - Dimension table for umpires created successfully.
+2026-04-08 23:58:59,919 - INFO - Dimension table for wickets created successfully.
+2026-04-08 23:58:59,956 - INFO - Dimension table for dates created successfully.
+2026-04-08 23:58:59,956 - INFO - Dimension tables created successfully.
+2026-04-09 20:55:45,540 - INFO - Starting ETL...
+2026-04-09 20:55:45,552 - ERROR - An error occurred while extracting data : [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-09 20:55:50,896 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-09 20:55:50,896 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-09 20:55:50,904 - INFO - Removed unnecessary columns if they existed.
+2026-04-09 20:55:52,259 - INFO -  Duplicates handled by dropping rows.
+2026-04-09 20:55:52,262 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-09 20:55:52,295 - INFO - Converted 'date' column to datetime.
+2026-04-09 20:55:52,295 - INFO - Data cleaning completed successfully.
+2026-04-09 20:55:52,298 - INFO - Validation completed successfully.
+2026-04-09 20:55:52,395 - INFO - Dimension table for teams created successfully.
+2026-04-09 20:55:52,536 - INFO - Dimension table for players created successfully.
+2026-04-09 20:55:52,615 - INFO - Dimension table for venues created successfully.
+2026-04-09 20:55:52,626 - INFO - Dimension table for umpires created successfully.
+2026-04-09 20:55:52,640 - INFO - Dimension table for wickets created successfully.
+2026-04-09 20:55:52,704 - INFO - Dimension table for dates created successfully.
+2026-04-09 20:55:52,704 - INFO - Dimension tables created successfully.
+2026-04-09 20:56:23,581 - INFO - Starting ETL...
+2026-04-09 20:56:23,581 - ERROR - An error occurred while extracting data : [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-09 20:56:25,639 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-09 20:56:25,639 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-09 20:56:25,640 - INFO - Removed unnecessary columns if they existed.
+2026-04-09 20:56:26,560 - INFO -  Duplicates handled by dropping rows.
+2026-04-09 20:56:26,561 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-09 20:56:26,583 - INFO - Converted 'date' column to datetime.
+2026-04-09 20:56:26,583 - INFO - Data cleaning completed successfully.
+2026-04-09 20:56:26,584 - INFO - Validation completed successfully.
+2026-04-09 20:56:26,663 - INFO - Dimension table for teams created successfully.
+2026-04-09 20:56:26,769 - INFO - Dimension table for players created successfully.
+2026-04-09 20:56:26,828 - INFO - Dimension table for venues created successfully.
+2026-04-09 20:56:26,871 - INFO - Dimension table for umpires created successfully.
+2026-04-09 20:56:26,882 - INFO - Dimension table for wickets created successfully.
+2026-04-09 20:56:26,937 - INFO - Dimension table for dates created successfully.
+2026-04-09 20:56:26,937 - INFO - Dimension tables created successfully.
+2026-04-09 20:56:26,937 - INFO - Using PyODBC connection string.
+2026-04-09 20:56:43,174 - ERROR - Failed to connect to database: ('08001', '[08001] [Microsoft][ODBC Driver 18 for SQL Server]Named Pipes Provider: Could not open a connection to SQL Server [2].  (2) (SQLDriverConnect); [08001] [Microsoft][ODBC Driver 18 for SQL Server]Login timeout expired (0); [08001] [Microsoft][ODBC Driver 18 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to localhost. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. (2)')
+2026-04-09 20:58:27,539 - INFO - Starting ETL...
+2026-04-09 20:58:27,540 - ERROR - An error occurred while extracting data : [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-09 20:58:29,556 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-09 20:58:29,556 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-09 20:58:29,557 - INFO - Removed unnecessary columns if they existed.
+2026-04-09 20:58:30,356 - INFO -  Duplicates handled by dropping rows.
+2026-04-09 20:58:30,357 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-09 20:58:30,376 - INFO - Converted 'date' column to datetime.
+2026-04-09 20:58:30,377 - INFO - Data cleaning completed successfully.
+2026-04-09 20:58:30,378 - INFO - Validation completed successfully.
+2026-04-09 20:58:30,435 - INFO - Dimension table for teams created successfully.
+2026-04-09 20:58:30,517 - INFO - Dimension table for players created successfully.
+2026-04-09 20:58:30,558 - INFO - Dimension table for venues created successfully.
+2026-04-09 20:58:30,565 - INFO - Dimension table for umpires created successfully.
+2026-04-09 20:58:30,573 - INFO - Dimension table for wickets created successfully.
+2026-04-09 20:58:30,604 - INFO - Dimension table for dates created successfully.
+2026-04-09 20:58:30,604 - INFO - Dimension tables created successfully.
+2026-04-09 20:58:30,604 - INFO - Using PyODBC connection string.
+2026-04-09 20:58:46,376 - ERROR - Failed to connect to database: ('08001', '[08001] [Microsoft][ODBC Driver 18 for SQL Server]TCP Provider: No connection could be made because the target machine actively refused it.\r\n (10061) (SQLDriverConnect); [08001] [Microsoft][ODBC Driver 18 for SQL Server]Login timeout expired (0); [08001] [Microsoft][ODBC Driver 18 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to DESKTOP-AKHSPQL\\MS_SQL_2019. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. (10061)')
+2026-04-09 21:00:28,407 - INFO - Starting ETL...
+2026-04-09 21:00:28,414 - ERROR - An error occurred while extracting data : [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-09 21:00:30,750 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-09 21:00:30,750 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-09 21:00:30,761 - INFO - Removed unnecessary columns if they existed.
+2026-04-09 21:00:31,508 - INFO -  Duplicates handled by dropping rows.
+2026-04-09 21:00:31,510 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-09 21:00:31,541 - INFO - Converted 'date' column to datetime.
+2026-04-09 21:00:31,541 - INFO - Data cleaning completed successfully.
+2026-04-09 21:00:31,542 - INFO - Validation completed successfully.
+2026-04-09 21:00:31,613 - INFO - Dimension table for teams created successfully.
+2026-04-09 21:00:31,711 - INFO - Dimension table for players created successfully.
+2026-04-09 21:00:31,762 - INFO - Dimension table for venues created successfully.
+2026-04-09 21:00:31,768 - INFO - Dimension table for umpires created successfully.
+2026-04-09 21:00:31,776 - INFO - Dimension table for wickets created successfully.
+2026-04-09 21:00:31,815 - INFO - Dimension table for dates created successfully.
+2026-04-09 21:00:31,815 - INFO - Dimension tables created successfully.
+2026-04-09 21:00:31,815 - INFO - Using PyODBC connection string.
+2026-04-09 21:00:47,658 - ERROR - Failed to connect to database: ('08001', '[08001] [Microsoft][ODBC Driver 18 for SQL Server]TCP Provider: No connection could be made because the target machine actively refused it.\r\n (10061) (SQLDriverConnect); [08001] [Microsoft][ODBC Driver 18 for SQL Server]Login timeout expired (0); [08001] [Microsoft][ODBC Driver 18 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to DESKTOP-AKHSPQL\\MS_SQL_2019. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. (10061)')
+2026-04-09 21:09:48,138 - INFO - Starting ETL...
+2026-04-09 21:09:48,172 - ERROR - An error occurred while extracting data : [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-09 21:09:50,552 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-09 21:09:50,552 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-09 21:09:50,563 - INFO - Removed unnecessary columns if they existed.
+2026-04-09 21:09:51,429 - INFO -  Duplicates handled by dropping rows.
+2026-04-09 21:09:51,432 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-09 21:09:51,466 - INFO - Converted 'date' column to datetime.
+2026-04-09 21:09:51,466 - INFO - Data cleaning completed successfully.
+2026-04-09 21:09:51,467 - INFO - Validation completed successfully.
+2026-04-09 21:09:51,536 - INFO - Dimension table for teams created successfully.
+2026-04-09 21:09:51,627 - INFO - Dimension table for players created successfully.
+2026-04-09 21:09:51,671 - INFO - Dimension table for venues created successfully.
+2026-04-09 21:09:51,677 - INFO - Dimension table for umpires created successfully.
+2026-04-09 21:09:51,685 - INFO - Dimension table for wickets created successfully.
+2026-04-09 21:09:51,723 - INFO - Dimension table for dates created successfully.
+2026-04-09 21:09:51,723 - INFO - Dimension tables created successfully.
+2026-04-09 21:09:51,724 - INFO - Using PyODBC connection string.
+2026-04-09 21:09:52,284 - INFO - Database connection established using PyODBC.
+2026-04-09 21:09:52,284 - INFO - Starting to load dimension tables...
+2026-04-09 21:09:52,697 - INFO - Table 'dim_team' created or already exists.
+2026-04-09 21:09:52,761 - INFO - Data loaded successfully to table 'dim_team' using PyODBC.
+2026-04-09 21:09:52,772 - INFO - Table 'dim_player' created or already exists.
+2026-04-09 21:09:53,229 - INFO - Data loaded successfully to table 'dim_player' using PyODBC.
+2026-04-09 21:09:53,238 - INFO - Table 'dim_venue' created or already exists.
+2026-04-09 21:09:53,352 - INFO - Data loaded successfully to table 'dim_venue' using PyODBC.
+2026-04-09 21:09:53,401 - INFO - Table 'dim_date' created or already exists.
+2026-04-09 21:09:54,521 - INFO - Data loaded successfully to table 'dim_date' using PyODBC.
+2026-04-09 21:09:54,889 - INFO - Table 'dim_umpires' created or already exists.
+2026-04-09 21:09:55,469 - INFO - Data loaded successfully to table 'dim_umpires' using PyODBC.
+2026-04-09 21:09:55,706 - INFO - Table 'dim_wickets' created or already exists.
+2026-04-09 21:09:55,751 - INFO - Data loaded successfully to table 'dim_wickets' using PyODBC.
+2026-04-09 21:09:55,752 - INFO - All dimension tables loaded successfully.
+2026-04-09 21:09:55,752 - INFO - Database connection closed successfully.
+2026-04-09 21:09:55,752 - INFO - ETL completed successfully.
+2026-04-09 21:48:54,096 - INFO - Starting ETL...
+2026-04-09 21:48:54,131 - ERROR - An error occurred while extracting data : [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-09 21:48:56,536 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-09 21:48:56,536 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-09 21:48:56,545 - INFO - Removed unnecessary columns if they existed.
+2026-04-09 21:48:57,504 - INFO -  Duplicates handled by dropping rows.
+2026-04-09 21:48:57,508 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-09 21:48:57,536 - INFO - Converted 'date' column to datetime.
+2026-04-09 21:48:57,536 - INFO - Data cleaning completed successfully.
+2026-04-09 21:48:57,537 - INFO - Validation completed successfully.
+2026-04-09 21:48:57,608 - INFO - Dimension table for teams created successfully.
+2026-04-09 21:48:57,698 - INFO - Dimension table for players created successfully.
+2026-04-09 21:48:57,742 - INFO - Dimension table for venues created successfully.
+2026-04-09 21:48:57,748 - INFO - Dimension table for umpires created successfully.
+2026-04-09 21:48:57,756 - INFO - Dimension table for wickets created successfully.
+2026-04-09 21:48:57,791 - INFO - Dimension table for dates created successfully.
+2026-04-09 21:48:57,792 - INFO - Dimension tables created successfully.
+2026-04-09 21:48:57,792 - INFO - Using PyODBC connection string.
+2026-04-09 21:48:58,404 - INFO - Database connection established using PyODBC.
+2026-04-09 21:48:58,405 - INFO - Starting to load dimension tables...
+2026-04-09 21:48:58,483 - INFO - Table 'dim_team' created or already exists.
+2026-04-09 21:48:58,618 - INFO - Data loaded successfully to table 'dim_team' using PyODBC.
+2026-04-09 21:48:58,634 - INFO - Table 'dim_player' created or already exists.
+2026-04-09 21:48:59,114 - INFO - Data loaded successfully to table 'dim_player' using PyODBC.
+2026-04-09 21:48:59,133 - INFO - Table 'dim_venue' created or already exists.
+2026-04-09 21:48:59,261 - INFO - Data loaded successfully to table 'dim_venue' using PyODBC.
+2026-04-09 21:48:59,318 - INFO - Table 'dim_date' created or already exists.
+2026-04-09 21:48:59,670 - INFO - Data loaded successfully to table 'dim_date' using PyODBC.
+2026-04-09 21:48:59,680 - INFO - Table 'dim_umpires' created or already exists.
+2026-04-09 21:48:59,751 - INFO - Data loaded successfully to table 'dim_umpires' using PyODBC.
+2026-04-09 21:48:59,763 - INFO - Table 'dim_wickets' created or already exists.
+2026-04-09 21:48:59,811 - INFO - Data loaded successfully to table 'dim_wickets' using PyODBC.
+2026-04-09 21:48:59,811 - INFO - All dimension tables loaded successfully.
+2026-04-09 21:48:59,812 - INFO - Database connection closed successfully.
+2026-04-09 21:48:59,812 - INFO - ETL completed successfully.
+2026-04-09 22:14:08,084 - INFO - Starting ETL...
+2026-04-09 22:14:08,095 - ERROR - An error occurred while extracting data : [Errno 2] No such file or directory: 'data/IPL1.csv'
+2026-04-09 22:14:10,542 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-09 22:14:10,542 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-09 22:14:10,552 - INFO - Removed unnecessary columns if they existed.
+2026-04-09 22:14:11,337 - INFO -  Duplicates handled by dropping rows.
+2026-04-09 22:14:11,340 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-09 22:14:11,370 - INFO - Converted 'date' column to datetime.
+2026-04-09 22:14:11,370 - INFO - Data cleaning completed successfully.
+2026-04-09 22:14:11,372 - INFO - Validation completed successfully.
+2026-04-09 22:14:11,434 - INFO - Dimension table for teams created successfully.
+2026-04-09 22:14:11,519 - INFO - Dimension table for players created successfully.
+2026-04-09 22:14:11,572 - INFO - Dimension table for venues created successfully.
+2026-04-09 22:14:11,581 - INFO - Dimension table for umpires created successfully.
+2026-04-09 22:14:11,589 - INFO - Dimension table for wickets created successfully.
+2026-04-09 22:14:11,629 - INFO - Dimension table for dates created successfully.
+2026-04-09 22:14:11,650 - INFO - Dimension table for stage created successfully.
+2026-04-09 22:14:11,650 - INFO - Dimension tables created successfully.
+2026-04-09 22:14:11,650 - INFO - Using PyODBC connection string.
+2026-04-09 22:14:12,298 - INFO - Database connection established using PyODBC.
+2026-04-09 22:14:12,298 - INFO - Starting to load dimension tables...
+2026-04-09 22:14:12,459 - INFO - Table 'dim_team' created or already exists.
+2026-04-09 22:14:12,555 - INFO - Data loaded successfully to table 'dim_team' using PyODBC.
+2026-04-09 22:14:12,562 - INFO - Table 'dim_player' created or already exists.
+2026-04-09 22:14:13,129 - INFO - Data loaded successfully to table 'dim_player' using PyODBC.
+2026-04-09 22:14:13,153 - INFO - Table 'dim_venue' created or already exists.
+2026-04-09 22:14:13,315 - INFO - Data loaded successfully to table 'dim_venue' using PyODBC.
+2026-04-09 22:14:13,323 - INFO - Table 'dim_date' created or already exists.
+2026-04-09 22:14:13,695 - INFO - Data loaded successfully to table 'dim_date' using PyODBC.
+2026-04-09 22:14:13,703 - INFO - Table 'dim_umpires' created or already exists.
+2026-04-09 22:14:13,801 - INFO - Data loaded successfully to table 'dim_umpires' using PyODBC.
+2026-04-09 22:14:13,809 - INFO - Table 'dim_wickets' created or already exists.
+2026-04-09 22:14:13,844 - INFO - Data loaded successfully to table 'dim_wickets' using PyODBC.
+2026-04-09 22:14:13,844 - INFO - All dimension tables loaded successfully.
+2026-04-09 22:14:13,844 - INFO - Database connection closed successfully.
+2026-04-09 22:14:13,845 - INFO - ETL completed successfully.
