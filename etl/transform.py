@@ -80,7 +80,7 @@ def create_dim_tables(df):
 
     except Exception as e:
         logger.error(f"An error occurred while creating dimension tables: {e}")
-        return None, None, None, None, None, None
+        return None, None, None, None, None, None, None
     
 
     
@@ -92,6 +92,10 @@ def create_fact_tables(df, dim_team, dim_player, dim_venue, dim_date ,dim_umpire
         player_map = dict(zip(dim_player.player_name, dim_player.player_id))
         venue_map = dict(zip(dim_venue.venue, dim_venue.venue_id))
         date_map = dict(zip(dim_date.date, dim_date.date_id))
+        stage_map = dict(zip(dim_stage.stage, dim_stage.stage_id))
+        umpire_map = dict(zip(dim_umpires.umpire_name, dim_umpires.umpire_id))
+        wicket_map = dict(zip(dim_wickets.wiket_type, dim_wickets.wicket_id))
+
 
         logger.info("Mapping dictionaries for dimension tables created successfully.")
 
@@ -114,13 +118,20 @@ def create_fact_tables(df, dim_team, dim_player, dim_venue, dim_date ,dim_umpire
         logger.info("Fact deliveries table created successfully.")
 
         # FACT MATCHES
-        fact_matches = df.groupby("match_id").agg({
+        fact_matches =df.groupby("match_id").agg({
             "date": "first",
             "venue": "first",
+            "season": "first",
+            "stage": "first",
+            "batting_team": "first",
+            "bowling_team": "first",
             "toss_winner": "first",
             "match_won_by": "first",
             "team_runs": "max",
-            "team_wicket": "max"
+            "team_wicket": "max",
+            'umpire': 'first',
+            "team_balls": "sum",
+             "runs_target": "first"       
         }).reset_index()
 
         logger.info("Aggregated match-level data for fact matches.")
@@ -129,11 +140,52 @@ def create_fact_tables(df, dim_team, dim_player, dim_venue, dim_date ,dim_umpire
         fact_matches["venue_id"] = fact_matches["venue"].map(venue_map)
         fact_matches["toss_winner_id"] = fact_matches["toss_winner"].map(team_map)
         fact_matches["winner_team_id"] = fact_matches["match_won_by"].map(team_map)
+        fact_matches["umpire_id"] = fact_matches["umpire"].map(umpire_map)
+        fact_matches["stage_id"] = fact_matches["stage"].map(stage_map)
+        logger.info("Mapped dimension attributes to their respective IDs in fact matches.")
 
         logger.info("Fact tables created successfully.")
 
-        return fact_deliveries, fact_matches  
+
+        # frature engineering for fact tables
+        df['is_four'] = (df['runs_total'] == 4) & (df['runs_extras'] == 0)
+        df['is_six'] = (df['runs_total'] == 6) & (df['runs_extras'] == 0)
+        df['is_boundary'] = df['is_four'] | df['is_six']
+        df['is_dot'] = (df['runs_total'] == 0) & (df['valid_ball'] == 1)
+        df['is_wicket'] = df['wicket_kind'].notna().astype(int)
+        # --fact_batters
+    
+        Fact_batting = df.groupby('batter').agg({
+            'runs_batter': 'sum',
+            'valid_ball': 'count',
+            'is_four': 'sum',
+            'is_six': 'sum',
+            'match_id': 'nunique'
+            }).reset_index()
+
+        Fact_batting.columns = ['batter', 'Runs', 'Balls', 'Fours', 'Sixes', 'Matches']
+        Fact_batting['SR'] = (Fact_batting['Runs'] / Fact_batting['Balls'] * 100).round(2)
+        Fact_batting['Avg'] = (Fact_batting['Runs'] / Fact_batting['Matches']).round(2)
+        Fact_batting['batter_id'] = Fact_batting['batter'].map(player_map)
+        logger.info("Fact table for batting created successfully.") 
+
+        # Fact_bolwing 
+        Fact_bowling = df.groupby('bowler').agg({
+            'is_wicket': 'sum',
+            'runs_bowler': 'sum',
+            'valid_ball': 'count',
+            'match_id': 'nunique'
+        }).reset_index()
+
+        Fact_bowling.columns = ['bowler', 'Wickets', 'Runs', 'Balls', 'Matches']
+        Fact_bowling['Eco'] = (Fact_bowling['Runs'] / Fact_bowling['Balls'] * 6).round(2)
+        Fact_bowling['SR'] = (Fact_bowling['Balls'] / Fact_bowling['Wickets'].replace(0, 1)).round(2)
+        Fact_bowling['Avg'] = (Fact_bowling['Runs'] / Fact_bowling['Wickets'].replace(0, 1)).round(2)
+        Fact_bowling['bowler_id'] = Fact_bowling['bowler'].map(player_map)
+        logger.info("Fact table for bowling created successfully.")
+
+        return fact_deliveries, fact_matches ,Fact_batting, Fact_bowling
         
     except Exception as e:
         logger.error(f"An error occurred while creating fact tables: {e}")
-        return None, None
+        return None, None, None, None
