@@ -74,18 +74,21 @@ def create_dim_tables(df):
         dim_stage['stage_id']=range(1, len(dim_stage) + 1)
         logger.info("Dimension table for stage created successfully.")
 
+        dim_seasons = pd.DataFrame({"season_name":df['season'].astype(str).dropna().drop_duplicates().sort_values()})
+        dim_seasons['season_id'] = range(1, len(dim_seasons) + 1)
+        logger.info("Dimension table for seasons created successfully.")    
+
         logger.info("Dimension tables created successfully.")
 
-        return dim_team, dim_player, dim_venue, dim_date, dim_umpires, dim_wickets,dim_stage
+        return dim_team, dim_player, dim_venue, dim_date, dim_umpires, dim_wickets,dim_stage, dim_seasons
 
     except Exception as e:
         logger.error(f"An error occurred while creating dimension tables: {e}")
-        return None, None, None, None, None, None, None
-    
+        return None, None, None, None, None, None, None, None
 
     
 
-def create_fact_tables(df, dim_team, dim_player, dim_venue, dim_date ,dim_umpires, dim_wickets ):
+def create_fact_tables(df, dim_team, dim_player, dim_venue, dim_date ,dim_umpires, dim_wickets, dim_stage, dim_seasons ):
     try:
         logger.info("Creating mapping dictionaries for dimension tables.")
         team_map = dict(zip(dim_team.team_name, dim_team.team_id))
@@ -95,26 +98,85 @@ def create_fact_tables(df, dim_team, dim_player, dim_venue, dim_date ,dim_umpire
         stage_map = dict(zip(dim_stage.stage, dim_stage.stage_id))
         umpire_map = dict(zip(dim_umpires.umpire_name, dim_umpires.umpire_id))
         wicket_map = dict(zip(dim_wickets.wiket_type, dim_wickets.wicket_id))
+        season_map = dict(zip(dim_seasons.season_name, dim_seasons.season_id))
+
+         # frature engineering for fact tables
+        df['is_four'] = (df['runs_total'] == 4) & (df['runs_extras'] == 0)
+        df['is_six'] = (df['runs_total'] == 6) & (df['runs_extras'] == 0)
+        df['is_boundary'] = df['is_four'] | df['is_six']
+        df['is_dot'] = (df['runs_total'] == 0) & (df['valid_ball'] == 1)
+        df['is_wicket'] = df['wicket_kind'].notna().astype(int)
+        df["delivery_id"] = (
+            df["match_id"].astype(str) + "_" +
+            df["innings"].astype(str) + "_" +
+            df["over"].astype(str) + "_" +
+            df["ball"].astype(str)
+        )
+        # --fact_batters
 
 
         logger.info("Mapping dictionaries for dimension tables created successfully.")
 
         # FACT DELIVERIES
-        fact_deliveries = df.copy()
-
+        fact_deliveries = df[[
+            "delivery_id", "match_id", "innings", "over", "ball", "ball_no", "balls_per_over",
+            "batting_team", "bowling_team", "batter", "non_striker", "bowler",
+            "runs_batter", "runs_extras", "runs_total", "runs_not_boundary",
+            "extra_type", "wicket_kind", "player_out", "fielders", "valid_ball",
+            "runs_bowler", "bowler_wicket", "bat_pos", "balls_faced", "new_batter",
+            "striker_out", "is_wicket", "stage", "season", "date", "venue",
+            "toss_winner", "match_won_by", "player_of_match", "umpire"
+        ]].copy()
+        
+        # Add engineered features
+        fact_deliveries['is_four'] = df['is_four']
+        fact_deliveries['is_six'] = df['is_six']
+        fact_deliveries['is_boundary'] = df['is_boundary']
+        fact_deliveries['is_dot'] = df['is_dot']
+        
+        # Map to dimension IDs
         fact_deliveries["batting_team_id"] = fact_deliveries["batting_team"].map(team_map)
         fact_deliveries["bowling_team_id"] = fact_deliveries["bowling_team"].map(team_map)
-        logger.info("Mapped team names to team IDs in fact deliveries.")
-        fact_deliveries["striker_id"] = fact_deliveries["batter"].map(player_map)
-        fact_deliveries["bowler_id"] = fact_deliveries["bowler"].map(player_map)
+        fact_deliveries["batter_id"] = fact_deliveries["batter"].map(player_map)
         fact_deliveries["non_striker_id"] = fact_deliveries["non_striker"].map(player_map)
-        logger.info("Mapped player names to player IDs in fact deliveries.")
-
+        fact_deliveries["bowler_id"] = fact_deliveries["bowler"].map(player_map)
+        fact_deliveries["player_of_match_id"] = fact_deliveries["player_of_match"].map(player_map)
+        fact_deliveries["player_out_id"] = fact_deliveries["player_out"].map(player_map)
+        fact_deliveries["wicket_kind_id"] = fact_deliveries["wicket_kind"].map(wicket_map)
+        fact_deliveries["stage_id"] = fact_deliveries["stage"].map(stage_map)
+        fact_deliveries["season_id"] = fact_deliveries["season"].map(season_map)
+        fact_deliveries["toss_winner_id"] = fact_deliveries["toss_winner"].map(team_map)
+        fact_deliveries["match_won_by_id"] = fact_deliveries["match_won_by"].map(team_map)
         fact_deliveries["venue_id"] = fact_deliveries["venue"].map(venue_map)
         fact_deliveries["date_id"] = fact_deliveries["date"].map(date_map)
-        logger.info("Mapped venue names to venue IDs and dates to date IDs in fact deliveries.")
-
-        fact_deliveries["is_wicket"] = fact_deliveries["wicket_kind"].notnull().astype(int)
+        fact_deliveries["umpire_id"] = fact_deliveries["umpire"].map(umpire_map)
+        fact_deliveries["overs"] = fact_deliveries["over"]
+        fact_deliveries.drop(columns=['over'], inplace=True)
+        logger.info("Mapped dimension attributes to their respective IDs in fact deliveries.")
+        
+        # Reorder columns: IDs first, then measures and original columns
+        id_columns = [
+            "delivery_id", "match_id", "date_id", "venue_id", "season_id", "stage_id",
+            "batting_team_id", "bowling_team_id", "batter_id", "non_striker_id", "bowler_id",
+            "player_of_match_id", "player_out_id", "wicket_kind_id", "toss_winner_id",
+            "match_won_by_id", "umpire_id"
+        ]
+        
+        # Keep measure columns (numeric and engineered features)
+        measure_columns = [
+            "innings", "overs", "ball", "ball_no", "balls_per_over",
+            "runs_batter", "runs_extras", "runs_total", "runs_not_boundary",
+            "valid_ball", "runs_bowler", "bowler_wicket", "bat_pos", "balls_faced",
+            "is_wicket", "is_four", "is_six", "is_boundary", "is_dot"
+        ]
+        
+        # Select only ID and measure columns, drop dimension text columns
+        fact_deliveries = fact_deliveries[id_columns + measure_columns]
+        
+        # Remove duplicate delivery records based on delivery_id (primary key)
+        fact_deliveries = fact_deliveries.drop_duplicates(subset=['delivery_id'], keep='first')
+        logger.info(f"Removed duplicate deliveries. Final count: {len(fact_deliveries)} records.")
+        
         logger.info("Fact deliveries table created successfully.")
 
         # FACT MATCHES
@@ -124,12 +186,12 @@ def create_fact_tables(df, dim_team, dim_player, dim_venue, dim_date ,dim_umpire
             "season": "first",
             "stage": "first",
             "batting_team": "first",
-            "bowling_team": "first",
+            "bowling_team": "first",           
+            'umpire': 'first',
             "toss_winner": "first",
             "match_won_by": "first",
             "team_runs": "max",
             "team_wicket": "max",
-            'umpire': 'first',
             "team_balls": "sum",
              "runs_target": "first"       
         }).reset_index()
@@ -142,18 +204,23 @@ def create_fact_tables(df, dim_team, dim_player, dim_venue, dim_date ,dim_umpire
         fact_matches["winner_team_id"] = fact_matches["match_won_by"].map(team_map)
         fact_matches["umpire_id"] = fact_matches["umpire"].map(umpire_map)
         fact_matches["stage_id"] = fact_matches["stage"].map(stage_map)
+        fact_matches["season_id"] = fact_matches["season"].map(season_map)
+        fact_matches["batting_team_id"] = fact_matches["batting_team"].map(team_map)
+        fact_matches["bowling_team_id"] = fact_matches["bowling_team"].map(team_map)
+
         logger.info("Mapped dimension attributes to their respective IDs in fact matches.")
+
+        # Keep only ID and measure columns, drop dimension text columns
+        fact_matches = fact_matches[[
+            "match_id", "date_id", "venue_id", "season_id", "stage_id",
+            "batting_team_id", "bowling_team_id", "umpire_id", "toss_winner_id",
+            "winner_team_id", "team_runs", "team_wicket", "team_balls", "runs_target"
+        ]]
 
         logger.info("Fact tables created successfully.")
 
 
-        # frature engineering for fact tables
-        df['is_four'] = (df['runs_total'] == 4) & (df['runs_extras'] == 0)
-        df['is_six'] = (df['runs_total'] == 6) & (df['runs_extras'] == 0)
-        df['is_boundary'] = df['is_four'] | df['is_six']
-        df['is_dot'] = (df['runs_total'] == 0) & (df['valid_ball'] == 1)
-        df['is_wicket'] = df['wicket_kind'].notna().astype(int)
-        # --fact_batters
+       
     
         Fact_batting = df.groupby('batter').agg({
             'runs_batter': 'sum',
@@ -163,10 +230,16 @@ def create_fact_tables(df, dim_team, dim_player, dim_venue, dim_date ,dim_umpire
             'match_id': 'nunique'
             }).reset_index()
 
-        Fact_batting.columns = ['batter', 'Runs', 'Balls', 'Fours', 'Sixes', 'Matches']
-        Fact_batting['SR'] = (Fact_batting['Runs'] / Fact_batting['Balls'] * 100).round(2)
-        Fact_batting['Avg'] = (Fact_batting['Runs'] / Fact_batting['Matches']).round(2)
+        Fact_batting.columns = ['batter', 'total_runs', 'no_balls', 'no_fours', 'no_sixes', 'no_matches']
+        Fact_batting['SR'] = (Fact_batting['total_runs'] / Fact_batting['no_balls'] * 100).round(2)
+        Fact_batting['Avg'] = (Fact_batting['total_runs'] / Fact_batting['no_matches']).round(2)
         Fact_batting['batter_id'] = Fact_batting['batter'].map(player_map)
+        
+        # Keep only ID and measure columns, drop player name
+        Fact_batting = Fact_batting[[
+            'batter_id', 'total_runs', 'no_balls', 'no_fours', 'no_sixes', 'no_matches', 'SR', 'Avg'
+        ]]
+        
         logger.info("Fact table for batting created successfully.") 
 
         # Fact_bolwing 
@@ -177,11 +250,17 @@ def create_fact_tables(df, dim_team, dim_player, dim_venue, dim_date ,dim_umpire
             'match_id': 'nunique'
         }).reset_index()
 
-        Fact_bowling.columns = ['bowler', 'Wickets', 'Runs', 'Balls', 'Matches']
-        Fact_bowling['Eco'] = (Fact_bowling['Runs'] / Fact_bowling['Balls'] * 6).round(2)
-        Fact_bowling['SR'] = (Fact_bowling['Balls'] / Fact_bowling['Wickets'].replace(0, 1)).round(2)
-        Fact_bowling['Avg'] = (Fact_bowling['Runs'] / Fact_bowling['Wickets'].replace(0, 1)).round(2)
+        Fact_bowling.columns = ['bowler', 'no_wickets', 'no_runs', 'no_balls', 'no_matches']
+        Fact_bowling['Eco'] = (Fact_bowling['no_runs'] / Fact_bowling['no_balls'] * 6).round(2)
+        Fact_bowling['SR'] = (Fact_bowling['no_balls'] / Fact_bowling['no_wickets'].replace(0, 1)).round(2)
+        Fact_bowling['Avg'] = (Fact_bowling['no_runs'] / Fact_bowling['no_wickets'].replace(0, 1)).round(2)
         Fact_bowling['bowler_id'] = Fact_bowling['bowler'].map(player_map)
+        
+        # Keep only ID and measure columns, drop player name
+        Fact_bowling = Fact_bowling[[
+            'bowler_id', 'no_wickets', 'no_runs', 'no_balls', 'no_matches', 'Eco', 'SR', 'Avg'
+        ]]
+        
         logger.info("Fact table for bowling created successfully.")
 
         return fact_deliveries, fact_matches ,Fact_batting, Fact_bowling

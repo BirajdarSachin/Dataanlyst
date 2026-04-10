@@ -883,3 +883,356 @@
 2026-04-09 22:43:17,798 - INFO - All dimension tables loaded successfully.
 2026-04-09 22:43:17,799 - INFO - Database connection closed successfully.
 2026-04-09 22:43:17,799 - INFO - ETL completed successfully.
+2026-04-10 23:51:15,929 - INFO - Starting ETL...
+2026-04-10 23:51:18,563 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-10 23:51:18,563 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-10 23:51:18,567 - INFO - Removed unnecessary columns if they existed.
+2026-04-10 23:51:19,488 - INFO -  Duplicates handled by dropping rows.
+2026-04-10 23:51:19,491 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-10 23:51:19,586 - INFO - Converted 'date' column to datetime.
+2026-04-10 23:51:19,586 - INFO - Data cleaning completed successfully.
+2026-04-10 23:51:19,590 - INFO - Validation completed successfully.
+2026-04-10 23:51:19,682 - INFO - Dimension table for teams created successfully.
+2026-04-10 23:51:19,798 - INFO - Dimension table for players created successfully.
+2026-04-10 23:51:19,851 - INFO - Dimension table for venues created successfully.
+2026-04-10 23:51:19,860 - INFO - Dimension table for umpires created successfully.
+2026-04-10 23:51:19,869 - INFO - Dimension table for wickets created successfully.
+2026-04-10 23:51:19,918 - INFO - Dimension table for dates created successfully.
+2026-04-10 23:51:19,940 - INFO - Dimension table for stage created successfully.
+2026-04-10 23:51:19,997 - INFO - Dimension table for seasons created successfully.
+2026-04-10 23:51:19,997 - INFO - Dimension tables created successfully.
+2026-04-10 23:51:19,997 - INFO - Creating mapping dictionaries for dimension tables.
+2026-04-10 23:51:20,442 - INFO - Mapping dictionaries for dimension tables created successfully.
+2026-04-10 23:51:20,684 - ERROR - An error occurred while creating fact tables: 'Series' object has no attribute 'dropcolumns'
+2026-04-10 23:51:20,704 - INFO - Using PyODBC connection string.
+2026-04-10 23:51:21,461 - INFO - Database connection established using PyODBC.
+2026-04-10 23:51:21,461 - INFO - Starting to load dimension tables...
+2026-04-10 23:51:21,610 - INFO - Table 'dim_team' created or already exists.
+2026-04-10 23:51:21,717 - INFO - Data loaded successfully to table 'dim_team' using PyODBC.
+2026-04-10 23:51:21,717 - ERROR - Error loading dimension tables: name 'create_dim_tables' is not defined
+2026-04-10 23:51:21,718 - INFO - Database connection closed successfully.
+2026-04-10 23:51:21,718 - ERROR - ETL failed: name 'create_dim_tables' is not defined
+2026-04-11 00:00:47,675 - INFO - Starting ETL...
+2026-04-11 00:00:50,034 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-11 00:00:50,034 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-11 00:00:50,039 - INFO - Removed unnecessary columns if they existed.
+2026-04-11 00:00:50,869 - INFO -  Duplicates handled by dropping rows.
+2026-04-11 00:00:50,871 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-11 00:00:50,895 - INFO - Converted 'date' column to datetime.
+2026-04-11 00:00:50,895 - INFO - Data cleaning completed successfully.
+2026-04-11 00:00:50,897 - INFO - Validation completed successfully.
+2026-04-11 00:00:50,965 - INFO - Dimension table for teams created successfully.
+2026-04-11 00:00:51,056 - INFO - Dimension table for players created successfully.
+2026-04-11 00:00:51,106 - INFO - Dimension table for venues created successfully.
+2026-04-11 00:00:51,112 - INFO - Dimension table for umpires created successfully.
+2026-04-11 00:00:51,119 - INFO - Dimension table for wickets created successfully.
+2026-04-11 00:00:51,156 - INFO - Dimension table for dates created successfully.
+2026-04-11 00:00:51,176 - INFO - Dimension table for stage created successfully.
+2026-04-11 00:00:51,225 - INFO - Dimension table for seasons created successfully.
+2026-04-11 00:00:51,225 - INFO - Dimension tables created successfully.
+2026-04-11 00:00:51,225 - INFO - Creating mapping dictionaries for dimension tables.
+2026-04-11 00:00:51,643 - INFO - Mapping dictionaries for dimension tables created successfully.
+2026-04-11 00:00:51,837 - ERROR - An error occurred while creating fact tables: 'Series' object has no attribute 'dropcolumns'
+2026-04-11 00:00:51,856 - INFO - Using PyODBC connection string.
+2026-04-11 00:00:52,449 - INFO - Database connection established using PyODBC.
+2026-04-11 00:00:52,449 - INFO - Starting to load dimension tables...
+2026-04-11 00:00:52,503 - INFO - Table 'dim_team' created or already exists.
+2026-04-11 00:00:52,590 - ERROR - Error loading data to table 'dim_team': ('23000', "[23000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Violation of PRIMARY KEY constraint 'PK__dim_team__F82DEDBC56464B86'. Cannot insert duplicate key in object 'dbo.dim_team'. The duplicate key value is (1). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]The statement has been terminated. (3621)")
+2026-04-11 00:00:52,590 - ERROR - Error loading dimension tables: ('23000', "[23000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Violation of PRIMARY KEY constraint 'PK__dim_team__F82DEDBC56464B86'. Cannot insert duplicate key in object 'dbo.dim_team'. The duplicate key value is (1). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]The statement has been terminated. (3621)")
+2026-04-11 00:00:52,591 - INFO - Database connection closed successfully.
+2026-04-11 00:00:52,591 - ERROR - ETL failed: ('23000', "[23000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Violation of PRIMARY KEY constraint 'PK__dim_team__F82DEDBC56464B86'. Cannot insert duplicate key in object 'dbo.dim_team'. The duplicate key value is (1). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]The statement has been terminated. (3621)")
+2026-04-11 00:01:59,213 - INFO - Starting ETL...
+2026-04-11 00:02:01,124 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-11 00:02:01,124 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-11 00:02:01,125 - INFO - Removed unnecessary columns if they existed.
+2026-04-11 00:02:02,029 - INFO -  Duplicates handled by dropping rows.
+2026-04-11 00:02:02,030 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-11 00:02:02,056 - INFO - Converted 'date' column to datetime.
+2026-04-11 00:02:02,056 - INFO - Data cleaning completed successfully.
+2026-04-11 00:02:02,058 - INFO - Validation completed successfully.
+2026-04-11 00:02:02,134 - INFO - Dimension table for teams created successfully.
+2026-04-11 00:02:02,233 - INFO - Dimension table for players created successfully.
+2026-04-11 00:02:02,282 - INFO - Dimension table for venues created successfully.
+2026-04-11 00:02:02,289 - INFO - Dimension table for umpires created successfully.
+2026-04-11 00:02:02,298 - INFO - Dimension table for wickets created successfully.
+2026-04-11 00:02:02,348 - INFO - Dimension table for dates created successfully.
+2026-04-11 00:02:02,374 - INFO - Dimension table for stage created successfully.
+2026-04-11 00:02:02,437 - INFO - Dimension table for seasons created successfully.
+2026-04-11 00:02:02,438 - INFO - Dimension tables created successfully.
+2026-04-11 00:02:02,438 - INFO - Creating mapping dictionaries for dimension tables.
+2026-04-11 00:02:02,905 - INFO - Mapping dictionaries for dimension tables created successfully.
+2026-04-11 00:02:03,182 - ERROR - An error occurred while creating fact tables: 'Series' object has no attribute 'dropcolumns'
+2026-04-11 00:02:03,202 - INFO - Using PyODBC connection string.
+2026-04-11 00:02:03,271 - INFO - Database connection established using PyODBC.
+2026-04-11 00:02:03,271 - INFO - Starting to load dimension tables...
+2026-04-11 00:02:03,271 - ERROR - Error loading dimension tables: Load.load_incremental() got an unexpected keyword argument 'if_exists'
+2026-04-11 00:02:03,272 - INFO - Database connection closed successfully.
+2026-04-11 00:02:03,272 - ERROR - ETL failed: Load.load_incremental() got an unexpected keyword argument 'if_exists'
+2026-04-11 00:03:19,714 - INFO - Starting ETL...
+2026-04-11 00:03:21,649 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-11 00:03:21,649 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-11 00:03:21,650 - INFO - Removed unnecessary columns if they existed.
+2026-04-11 00:03:22,544 - INFO -  Duplicates handled by dropping rows.
+2026-04-11 00:03:22,546 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-11 00:03:22,565 - INFO - Converted 'date' column to datetime.
+2026-04-11 00:03:22,565 - INFO - Data cleaning completed successfully.
+2026-04-11 00:03:22,566 - INFO - Validation completed successfully.
+2026-04-11 00:03:22,667 - INFO - Dimension table for teams created successfully.
+2026-04-11 00:03:22,769 - INFO - Dimension table for players created successfully.
+2026-04-11 00:03:22,814 - INFO - Dimension table for venues created successfully.
+2026-04-11 00:03:22,820 - INFO - Dimension table for umpires created successfully.
+2026-04-11 00:03:22,827 - INFO - Dimension table for wickets created successfully.
+2026-04-11 00:03:22,870 - INFO - Dimension table for dates created successfully.
+2026-04-11 00:03:22,892 - INFO - Dimension table for stage created successfully.
+2026-04-11 00:03:22,948 - INFO - Dimension table for seasons created successfully.
+2026-04-11 00:03:22,948 - INFO - Dimension tables created successfully.
+2026-04-11 00:03:22,948 - INFO - Creating mapping dictionaries for dimension tables.
+2026-04-11 00:03:23,357 - INFO - Mapping dictionaries for dimension tables created successfully.
+2026-04-11 00:03:23,573 - INFO - Mapped dimension attributes to their respective IDs in fact deliveries.
+2026-04-11 00:03:23,574 - INFO - Fact deliveries table created successfully.
+2026-04-11 00:03:23,739 - INFO - Aggregated match-level data for fact matches.
+2026-04-11 00:03:23,746 - INFO - Mapped dimension attributes to their respective IDs in fact matches.
+2026-04-11 00:03:23,747 - INFO - Fact tables created successfully.
+2026-04-11 00:03:23,797 - INFO - Fact table for batting created successfully.
+2026-04-11 00:03:23,838 - INFO - Fact table for bowling created successfully.
+2026-04-11 00:03:23,838 - INFO - Using PyODBC connection string.
+2026-04-11 00:03:23,961 - INFO - Database connection established using PyODBC.
+2026-04-11 00:03:23,961 - INFO - Starting to load dimension tables...
+2026-04-11 00:03:23,961 - ERROR - Error loading dimension tables: Load.load_incremental() got an unexpected keyword argument 'if_exists'
+2026-04-11 00:03:23,962 - INFO - Database connection closed successfully.
+2026-04-11 00:03:23,962 - ERROR - ETL failed: Load.load_incremental() got an unexpected keyword argument 'if_exists'
+2026-04-11 00:10:23,610 - INFO - Starting ETL...
+2026-04-11 00:10:26,185 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-11 00:10:26,186 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-11 00:10:26,190 - INFO - Removed unnecessary columns if they existed.
+2026-04-11 00:10:26,982 - INFO -  Duplicates handled by dropping rows.
+2026-04-11 00:10:26,984 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-11 00:10:27,012 - INFO - Converted 'date' column to datetime.
+2026-04-11 00:10:27,012 - INFO - Data cleaning completed successfully.
+2026-04-11 00:10:27,014 - INFO - Validation completed successfully.
+2026-04-11 00:10:27,078 - INFO - Dimension table for teams created successfully.
+2026-04-11 00:10:27,159 - INFO - Dimension table for players created successfully.
+2026-04-11 00:10:27,204 - INFO - Dimension table for venues created successfully.
+2026-04-11 00:10:27,211 - INFO - Dimension table for umpires created successfully.
+2026-04-11 00:10:27,218 - INFO - Dimension table for wickets created successfully.
+2026-04-11 00:10:27,254 - INFO - Dimension table for dates created successfully.
+2026-04-11 00:10:27,275 - INFO - Dimension table for stage created successfully.
+2026-04-11 00:10:27,327 - INFO - Dimension table for seasons created successfully.
+2026-04-11 00:10:27,327 - INFO - Dimension tables created successfully.
+2026-04-11 00:10:27,327 - INFO - Creating mapping dictionaries for dimension tables.
+2026-04-11 00:10:27,714 - INFO - Mapping dictionaries for dimension tables created successfully.
+2026-04-11 00:10:27,953 - INFO - Mapped dimension attributes to their respective IDs in fact deliveries.
+2026-04-11 00:10:27,954 - INFO - Fact deliveries table created successfully.
+2026-04-11 00:10:28,116 - INFO - Aggregated match-level data for fact matches.
+2026-04-11 00:10:28,121 - INFO - Mapped dimension attributes to their respective IDs in fact matches.
+2026-04-11 00:10:28,121 - INFO - Fact tables created successfully.
+2026-04-11 00:10:28,163 - INFO - Fact table for batting created successfully.
+2026-04-11 00:10:28,199 - INFO - Fact table for bowling created successfully.
+2026-04-11 00:10:28,199 - INFO - Using PyODBC connection string.
+2026-04-11 00:10:28,714 - INFO - Database connection established using PyODBC.
+2026-04-11 00:10:28,715 - INFO - Starting to load dimension tables...
+2026-04-11 00:10:28,765 - INFO - Table 'dim_team' created or already exists.
+2026-04-11 00:10:28,908 - INFO - Data loaded successfully to table 'dim_team' using PyODBC.
+2026-04-11 00:10:28,915 - INFO - Table 'dim_player' created or already exists.
+2026-04-11 00:10:29,501 - INFO - Data loaded successfully to table 'dim_player' using PyODBC.
+2026-04-11 00:10:29,506 - INFO - Table 'dim_venue' created or already exists.
+2026-04-11 00:10:29,664 - INFO - Data loaded successfully to table 'dim_venue' using PyODBC.
+2026-04-11 00:10:29,675 - INFO - Table 'dim_date' created or already exists.
+2026-04-11 00:10:30,158 - INFO - Data loaded successfully to table 'dim_date' using PyODBC.
+2026-04-11 00:10:30,168 - INFO - Table 'dim_umpires' created or already exists.
+2026-04-11 00:10:30,272 - INFO - Data loaded successfully to table 'dim_umpires' using PyODBC.
+2026-04-11 00:10:30,279 - INFO - Table 'dim_wickets' created or already exists.
+2026-04-11 00:10:30,338 - INFO - Data loaded successfully to table 'dim_wickets' using PyODBC.
+2026-04-11 00:10:30,347 - INFO - Table 'dim_stage' created or already exists.
+2026-04-11 00:10:30,405 - INFO - Data loaded successfully to table 'dim_stage' using PyODBC.
+2026-04-11 00:10:30,418 - INFO - Table 'dim_seasons' created or already exists.
+2026-04-11 00:10:30,463 - INFO - Data loaded successfully to table 'dim_seasons' using PyODBC.
+2026-04-11 00:10:30,463 - INFO - All dimension tables loaded successfully.
+2026-04-11 00:10:30,464 - INFO - Database connection closed successfully.
+2026-04-11 00:10:30,464 - INFO - ETL completed successfully.
+2026-04-11 00:11:13,176 - INFO - Starting ETL...
+2026-04-11 00:11:15,012 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-11 00:11:15,012 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-11 00:11:15,014 - INFO - Removed unnecessary columns if they existed.
+2026-04-11 00:11:15,856 - INFO -  Duplicates handled by dropping rows.
+2026-04-11 00:11:15,857 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-11 00:11:15,874 - INFO - Converted 'date' column to datetime.
+2026-04-11 00:11:15,875 - INFO - Data cleaning completed successfully.
+2026-04-11 00:11:15,875 - INFO - Validation completed successfully.
+2026-04-11 00:11:15,942 - INFO - Dimension table for teams created successfully.
+2026-04-11 00:11:16,046 - INFO - Dimension table for players created successfully.
+2026-04-11 00:11:16,095 - INFO - Dimension table for venues created successfully.
+2026-04-11 00:11:16,103 - INFO - Dimension table for umpires created successfully.
+2026-04-11 00:11:16,112 - INFO - Dimension table for wickets created successfully.
+2026-04-11 00:11:16,160 - INFO - Dimension table for dates created successfully.
+2026-04-11 00:11:16,181 - INFO - Dimension table for stage created successfully.
+2026-04-11 00:11:16,233 - INFO - Dimension table for seasons created successfully.
+2026-04-11 00:11:16,233 - INFO - Dimension tables created successfully.
+2026-04-11 00:11:16,233 - INFO - Creating mapping dictionaries for dimension tables.
+2026-04-11 00:11:16,634 - INFO - Mapping dictionaries for dimension tables created successfully.
+2026-04-11 00:11:16,836 - INFO - Mapped dimension attributes to their respective IDs in fact deliveries.
+2026-04-11 00:11:16,837 - INFO - Fact deliveries table created successfully.
+2026-04-11 00:11:16,990 - INFO - Aggregated match-level data for fact matches.
+2026-04-11 00:11:16,994 - INFO - Mapped dimension attributes to their respective IDs in fact matches.
+2026-04-11 00:11:16,995 - INFO - Fact tables created successfully.
+2026-04-11 00:11:17,032 - INFO - Fact table for batting created successfully.
+2026-04-11 00:11:17,069 - INFO - Fact table for bowling created successfully.
+2026-04-11 00:11:17,069 - INFO - Using PyODBC connection string.
+2026-04-11 00:11:17,606 - INFO - Database connection established using PyODBC.
+2026-04-11 00:11:17,607 - INFO - Starting to load fact tables...
+2026-04-11 00:11:17,667 - INFO - Table 'fact_matches' created or already exists.
+2026-04-11 00:11:17,760 - ERROR - Error loading data to table 'fact_matches': ('42S22', "[42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Invalid column name 'date'. (207) (SQLExecDirectW); [42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Invalid column name 'venue'. (207); [42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Invalid column name 'season'. (207); [42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Invalid column name 'stage'. (207); [42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Invalid column name 'batting_team'. (207); [42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Invalid column name 'bowling_team'. (207); [42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Invalid column name 'umpire'. (207); [42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Invalid column name 'toss_winner'. (207); [42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Invalid column name 'match_won_by'. (207); [42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Statement(s) could not be prepared. (8180)")
+2026-04-11 00:11:17,761 - ERROR - Error loading fact tables: ('42S22', "[42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Invalid column name 'date'. (207) (SQLExecDirectW); [42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Invalid column name 'venue'. (207); [42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Invalid column name 'season'. (207); [42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Invalid column name 'stage'. (207); [42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Invalid column name 'batting_team'. (207); [42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Invalid column name 'bowling_team'. (207); [42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Invalid column name 'umpire'. (207); [42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Invalid column name 'toss_winner'. (207); [42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Invalid column name 'match_won_by'. (207); [42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Statement(s) could not be prepared. (8180)")
+2026-04-11 00:11:17,761 - INFO - Database connection closed successfully.
+2026-04-11 00:11:17,761 - ERROR - ETL failed: ('42S22', "[42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Invalid column name 'date'. (207) (SQLExecDirectW); [42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Invalid column name 'venue'. (207); [42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Invalid column name 'season'. (207); [42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Invalid column name 'stage'. (207); [42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Invalid column name 'batting_team'. (207); [42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Invalid column name 'bowling_team'. (207); [42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Invalid column name 'umpire'. (207); [42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Invalid column name 'toss_winner'. (207); [42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Invalid column name 'match_won_by'. (207); [42S22] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Statement(s) could not be prepared. (8180)")
+2026-04-11 00:17:59,265 - INFO - Starting ETL...
+2026-04-11 00:18:01,327 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-11 00:18:01,327 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-11 00:18:01,328 - INFO - Removed unnecessary columns if they existed.
+2026-04-11 00:18:02,179 - INFO -  Duplicates handled by dropping rows.
+2026-04-11 00:18:02,180 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-11 00:18:02,204 - INFO - Converted 'date' column to datetime.
+2026-04-11 00:18:02,204 - INFO - Data cleaning completed successfully.
+2026-04-11 00:18:02,205 - INFO - Validation completed successfully.
+2026-04-11 00:18:02,278 - INFO - Dimension table for teams created successfully.
+2026-04-11 00:18:02,374 - INFO - Dimension table for players created successfully.
+2026-04-11 00:18:02,422 - INFO - Dimension table for venues created successfully.
+2026-04-11 00:18:02,428 - INFO - Dimension table for umpires created successfully.
+2026-04-11 00:18:02,436 - INFO - Dimension table for wickets created successfully.
+2026-04-11 00:18:02,480 - INFO - Dimension table for dates created successfully.
+2026-04-11 00:18:02,502 - INFO - Dimension table for stage created successfully.
+2026-04-11 00:18:02,556 - INFO - Dimension table for seasons created successfully.
+2026-04-11 00:18:02,556 - INFO - Dimension tables created successfully.
+2026-04-11 00:18:02,556 - INFO - Creating mapping dictionaries for dimension tables.
+2026-04-11 00:18:02,958 - INFO - Mapping dictionaries for dimension tables created successfully.
+2026-04-11 00:18:03,156 - INFO - Mapped dimension attributes to their respective IDs in fact deliveries.
+2026-04-11 00:18:03,169 - INFO - Fact deliveries table created successfully.
+2026-04-11 00:18:03,310 - INFO - Aggregated match-level data for fact matches.
+2026-04-11 00:18:03,315 - INFO - Mapped dimension attributes to their respective IDs in fact matches.
+2026-04-11 00:18:03,315 - INFO - Fact tables created successfully.
+2026-04-11 00:18:03,354 - INFO - Fact table for batting created successfully.
+2026-04-11 00:18:03,389 - INFO - Fact table for bowling created successfully.
+2026-04-11 00:18:03,389 - INFO - Using PyODBC connection string.
+2026-04-11 00:18:03,478 - INFO - Database connection established using PyODBC.
+2026-04-11 00:18:03,478 - INFO - Starting to load dimension tables...
+2026-04-11 00:18:03,488 - INFO - Table 'dim_team' created or already exists.
+2026-04-11 00:18:03,513 - INFO - Data loaded successfully to table 'dim_team' using PyODBC.
+2026-04-11 00:18:03,521 - INFO - Table 'dim_player' created or already exists.
+2026-04-11 00:18:03,705 - INFO - Data loaded successfully to table 'dim_player' using PyODBC.
+2026-04-11 00:18:03,708 - INFO - Table 'dim_venue' created or already exists.
+2026-04-11 00:18:03,763 - INFO - Data loaded successfully to table 'dim_venue' using PyODBC.
+2026-04-11 00:18:03,771 - INFO - Table 'dim_date' created or already exists.
+2026-04-11 00:18:04,113 - INFO - Data loaded successfully to table 'dim_date' using PyODBC.
+2026-04-11 00:18:04,144 - INFO - Table 'dim_umpires' created or already exists.
+2026-04-11 00:18:04,221 - INFO - Data loaded successfully to table 'dim_umpires' using PyODBC.
+2026-04-11 00:18:04,230 - INFO - Table 'dim_wickets' created or already exists.
+2026-04-11 00:18:04,276 - INFO - Data loaded successfully to table 'dim_wickets' using PyODBC.
+2026-04-11 00:18:04,284 - INFO - Table 'dim_stage' created or already exists.
+2026-04-11 00:18:04,323 - INFO - Data loaded successfully to table 'dim_stage' using PyODBC.
+2026-04-11 00:18:04,330 - INFO - Table 'dim_seasons' created or already exists.
+2026-04-11 00:18:04,360 - INFO - Data loaded successfully to table 'dim_seasons' using PyODBC.
+2026-04-11 00:18:04,361 - INFO - All dimension tables loaded successfully.
+2026-04-11 00:18:04,361 - INFO - Starting to load fact tables...
+2026-04-11 00:18:04,368 - INFO - Table 'fact_matches' created or already exists.
+2026-04-11 00:18:06,765 - INFO - Data loaded successfully to table 'fact_matches' using PyODBC.
+2026-04-11 00:18:06,805 - INFO - Table 'fact_deliveries' created or already exists.
+2026-04-11 00:18:07,294 - ERROR - Error loading data to table 'fact_deliveries': ('23000', "[23000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Violation of PRIMARY KEY constraint 'PK__fact_del__1C5CF4F5B59B7CDA'. Cannot insert duplicate key in object 'dbo.fact_deliveries'. The duplicate key value is (335982_1_0_3). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]The statement has been terminated. (3621)")
+2026-04-11 00:18:07,295 - ERROR - Error loading fact tables: ('23000', "[23000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Violation of PRIMARY KEY constraint 'PK__fact_del__1C5CF4F5B59B7CDA'. Cannot insert duplicate key in object 'dbo.fact_deliveries'. The duplicate key value is (335982_1_0_3). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]The statement has been terminated. (3621)")
+2026-04-11 00:18:07,296 - INFO - Database connection closed successfully.
+2026-04-11 00:18:07,296 - ERROR - ETL failed: ('23000', "[23000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Violation of PRIMARY KEY constraint 'PK__fact_del__1C5CF4F5B59B7CDA'. Cannot insert duplicate key in object 'dbo.fact_deliveries'. The duplicate key value is (335982_1_0_3). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]The statement has been terminated. (3621)")
+2026-04-11 00:19:51,596 - INFO - Starting ETL...
+2026-04-11 00:19:53,468 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-11 00:19:53,468 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-11 00:19:53,469 - INFO - Removed unnecessary columns if they existed.
+2026-04-11 00:19:54,251 - INFO -  Duplicates handled by dropping rows.
+2026-04-11 00:19:54,253 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-11 00:19:54,272 - INFO - Converted 'date' column to datetime.
+2026-04-11 00:19:54,273 - INFO - Data cleaning completed successfully.
+2026-04-11 00:19:54,274 - INFO - Validation completed successfully.
+2026-04-11 00:19:54,331 - INFO - Dimension table for teams created successfully.
+2026-04-11 00:19:54,415 - INFO - Dimension table for players created successfully.
+2026-04-11 00:19:54,457 - INFO - Dimension table for venues created successfully.
+2026-04-11 00:19:54,462 - INFO - Dimension table for umpires created successfully.
+2026-04-11 00:19:54,469 - INFO - Dimension table for wickets created successfully.
+2026-04-11 00:19:54,503 - INFO - Dimension table for dates created successfully.
+2026-04-11 00:19:54,522 - INFO - Dimension table for stage created successfully.
+2026-04-11 00:19:54,573 - INFO - Dimension table for seasons created successfully.
+2026-04-11 00:19:54,573 - INFO - Dimension tables created successfully.
+2026-04-11 00:19:54,573 - INFO - Creating mapping dictionaries for dimension tables.
+2026-04-11 00:19:54,971 - INFO - Mapping dictionaries for dimension tables created successfully.
+2026-04-11 00:19:55,180 - INFO - Mapped dimension attributes to their respective IDs in fact deliveries.
+2026-04-11 00:19:55,292 - INFO - Removed duplicate deliveries. Final count: 267987 records.
+2026-04-11 00:19:55,292 - INFO - Fact deliveries table created successfully.
+2026-04-11 00:19:55,428 - INFO - Aggregated match-level data for fact matches.
+2026-04-11 00:19:55,433 - INFO - Mapped dimension attributes to their respective IDs in fact matches.
+2026-04-11 00:19:55,433 - INFO - Fact tables created successfully.
+2026-04-11 00:19:55,472 - INFO - Fact table for batting created successfully.
+2026-04-11 00:19:55,506 - INFO - Fact table for bowling created successfully.
+2026-04-11 00:19:55,506 - INFO - Using PyODBC connection string.
+2026-04-11 00:19:55,584 - INFO - Database connection established using PyODBC.
+2026-04-11 00:19:55,584 - INFO - Starting to load dimension tables...
+2026-04-11 00:19:55,592 - INFO - Table 'dim_team' created or already exists.
+2026-04-11 00:19:55,596 - ERROR - Error loading data to table 'dim_team': ('23000', "[23000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Violation of PRIMARY KEY constraint 'PK__dim_team__F82DEDBC603ED925'. Cannot insert duplicate key in object 'dbo.dim_team'. The duplicate key value is (1). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]The statement has been terminated. (3621)")
+2026-04-11 00:19:55,596 - ERROR - Error loading dimension tables: ('23000', "[23000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Violation of PRIMARY KEY constraint 'PK__dim_team__F82DEDBC603ED925'. Cannot insert duplicate key in object 'dbo.dim_team'. The duplicate key value is (1). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]The statement has been terminated. (3621)")
+2026-04-11 00:19:55,598 - INFO - Database connection closed successfully.
+2026-04-11 00:19:55,598 - ERROR - ETL failed: ('23000', "[23000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Violation of PRIMARY KEY constraint 'PK__dim_team__F82DEDBC603ED925'. Cannot insert duplicate key in object 'dbo.dim_team'. The duplicate key value is (1). (2627) (SQLExecDirectW); [23000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]The statement has been terminated. (3621)")
+2026-04-11 00:21:38,296 - INFO - Starting ETL...
+2026-04-11 00:21:40,051 - INFO - Data successfully extracted from data/IPL.csv
+2026-04-11 00:21:40,051 - INFO - Extracted 278205 rows from source 'data/IPL.csv' 
+2026-04-11 00:21:40,052 - INFO - Removed unnecessary columns if they existed.
+2026-04-11 00:21:40,855 - INFO -  Duplicates handled by dropping rows.
+2026-04-11 00:21:40,856 - INFO - Standardized column names to lowercase and stripped whitespace.
+2026-04-11 00:21:40,881 - INFO - Converted 'date' column to datetime.
+2026-04-11 00:21:40,881 - INFO - Data cleaning completed successfully.
+2026-04-11 00:21:40,882 - INFO - Validation completed successfully.
+2026-04-11 00:21:40,952 - INFO - Dimension table for teams created successfully.
+2026-04-11 00:21:41,045 - INFO - Dimension table for players created successfully.
+2026-04-11 00:21:41,090 - INFO - Dimension table for venues created successfully.
+2026-04-11 00:21:41,095 - INFO - Dimension table for umpires created successfully.
+2026-04-11 00:21:41,102 - INFO - Dimension table for wickets created successfully.
+2026-04-11 00:21:41,136 - INFO - Dimension table for dates created successfully.
+2026-04-11 00:21:41,156 - INFO - Dimension table for stage created successfully.
+2026-04-11 00:21:41,210 - INFO - Dimension table for seasons created successfully.
+2026-04-11 00:21:41,210 - INFO - Dimension tables created successfully.
+2026-04-11 00:21:41,210 - INFO - Creating mapping dictionaries for dimension tables.
+2026-04-11 00:21:41,621 - INFO - Mapping dictionaries for dimension tables created successfully.
+2026-04-11 00:21:41,812 - INFO - Mapped dimension attributes to their respective IDs in fact deliveries.
+2026-04-11 00:21:41,909 - INFO - Removed duplicate deliveries. Final count: 267987 records.
+2026-04-11 00:21:41,909 - INFO - Fact deliveries table created successfully.
+2026-04-11 00:21:42,042 - INFO - Aggregated match-level data for fact matches.
+2026-04-11 00:21:42,046 - INFO - Mapped dimension attributes to their respective IDs in fact matches.
+2026-04-11 00:21:42,047 - INFO - Fact tables created successfully.
+2026-04-11 00:21:42,083 - INFO - Fact table for batting created successfully.
+2026-04-11 00:21:42,119 - INFO - Fact table for bowling created successfully.
+2026-04-11 00:21:42,119 - INFO - Using PyODBC connection string.
+2026-04-11 00:21:42,195 - INFO - Database connection established using PyODBC.
+2026-04-11 00:21:42,195 - INFO - Starting to load dimension tables...
+2026-04-11 00:21:42,203 - INFO - Table 'dim_team' created or already exists.
+2026-04-11 00:21:42,227 - INFO - Data loaded successfully to table 'dim_team' using PyODBC.
+2026-04-11 00:21:42,235 - INFO - Table 'dim_player' created or already exists.
+2026-04-11 00:21:42,426 - INFO - Data loaded successfully to table 'dim_player' using PyODBC.
+2026-04-11 00:21:42,430 - INFO - Table 'dim_venue' created or already exists.
+2026-04-11 00:21:42,484 - INFO - Data loaded successfully to table 'dim_venue' using PyODBC.
+2026-04-11 00:21:42,491 - INFO - Table 'dim_date' created or already exists.
+2026-04-11 00:21:42,788 - INFO - Data loaded successfully to table 'dim_date' using PyODBC.
+2026-04-11 00:21:42,795 - INFO - Table 'dim_umpires' created or already exists.
+2026-04-11 00:21:42,831 - INFO - Data loaded successfully to table 'dim_umpires' using PyODBC.
+2026-04-11 00:21:42,837 - INFO - Table 'dim_wickets' created or already exists.
+2026-04-11 00:21:42,854 - INFO - Data loaded successfully to table 'dim_wickets' using PyODBC.
+2026-04-11 00:21:42,860 - INFO - Table 'dim_stage' created or already exists.
+2026-04-11 00:21:42,872 - INFO - Data loaded successfully to table 'dim_stage' using PyODBC.
+2026-04-11 00:21:42,879 - INFO - Table 'dim_seasons' created or already exists.
+2026-04-11 00:21:42,891 - INFO - Data loaded successfully to table 'dim_seasons' using PyODBC.
+2026-04-11 00:21:42,891 - INFO - All dimension tables loaded successfully.
+2026-04-11 00:21:42,891 - INFO - Starting to load fact tables...
+2026-04-11 00:21:42,898 - INFO - Table 'fact_matches' created or already exists.
+2026-04-11 00:21:44,547 - INFO - Data loaded successfully to table 'fact_matches' using PyODBC.
+2026-04-11 00:21:44,554 - INFO - Table 'fact_deliveries' created or already exists.
+2026-04-11 00:32:02,448 - INFO - Data loaded successfully to table 'fact_deliveries' using PyODBC.
+2026-04-11 00:32:02,510 - INFO - Table 'fact_batting' created or already exists.
+2026-04-11 00:32:02,839 - INFO - Data loaded successfully to table 'fact_batting' using PyODBC.
+2026-04-11 00:32:02,852 - INFO - Table 'fact_bowling' created or already exists.
+2026-04-11 00:32:03,064 - INFO - Data loaded successfully to table 'fact_bowling' using PyODBC.
+2026-04-11 00:32:03,064 - INFO - All fact tables loaded successfully.
+2026-04-11 00:32:03,075 - INFO - Database connection closed successfully.
+2026-04-11 00:32:03,075 - INFO - ETL completed successfully.

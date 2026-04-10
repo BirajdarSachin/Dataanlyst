@@ -141,9 +141,7 @@ class Load:
         except Exception as e:
             logger.error(f"Error loading data to table '{table_name}': {e}")
             raise
-
-        dim_team, dim_player, dim_venue, dim_date,dim_umpires, dim_wickets,dim_stage    = create_dim_tables(df)
-    def load_dimension_tables(self, dim_team, dim_player, dim_venue, dim_date, dim_umpires, dim_wickets, dim_stage):
+    def load_dimension_tables(self, dim_team, dim_player, dim_venue, dim_date, dim_umpires, dim_wickets, dim_stage, dim_seasons):
         """
         Load all dimension tables to database.
 
@@ -159,25 +157,29 @@ class Load:
             self.load_dataframe(dim_date, 'dim_date', if_exists='replace')
             self.load_dataframe(dim_umpires, 'dim_umpires', if_exists='replace')
             self.load_dataframe(dim_wickets, 'dim_wickets', if_exists='replace')
-            self.load_dataframe(dim_stage, 'dim_stage', if_exists='replace')    
+            self.load_dataframe(dim_stage, 'dim_stage', if_exists='replace')
+            self.load_dataframe(dim_seasons, 'dim_seasons', if_exists='replace')
+               
             logger.info("All dimension tables loaded successfully.")
 
         except Exception as e:
             logger.error(f"Error loading dimension tables: {e}")
             raise
 
-    def load_fact_tables(self, fact_deliveries, fact_matches):
+    def load_fact_tables(self, fact_deliveries, fact_matches, fact_batting, fact_bowling):
         """
         Load all fact tables to database.
 
         Parameters:
-        fact_deliveries, fact_matches: DataFrames for fact tables
+        fact_deliveries, fact_matches, fact_batting, fact_bowling: DataFrames for fact tables
         """
         try:
             logger.info("Starting to load fact tables...")
 
-            self.load_dataframe(fact_deliveries, 'fact_deliveries', if_exists='replace')
             self.load_dataframe(fact_matches, 'fact_matches', if_exists='replace')
+            self.load_dataframe(fact_batting, 'fact_batting', if_exists='replace')
+            self.load_dataframe(fact_bowling, 'fact_bowling', if_exists='replace')
+            self.load_dataframe(fact_deliveries, 'fact_deliveries', if_exists='replace')
 
             logger.info("All fact tables loaded successfully.")
 
