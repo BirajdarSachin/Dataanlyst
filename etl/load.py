@@ -142,12 +142,13 @@ class Load:
             logger.error(f"Error loading data to table '{table_name}': {e}")
             raise
 
-    def load_dimension_tables(self, dim_team, dim_player, dim_venue, dim_date, dim_umpires, dim_wickets):
+        dim_team, dim_player, dim_venue, dim_date,dim_umpires, dim_wickets,dim_stage    = create_dim_tables(df)
+    def load_dimension_tables(self, dim_team, dim_player, dim_venue, dim_date, dim_umpires, dim_wickets, dim_stage):
         """
         Load all dimension tables to database.
 
         Parameters:
-        dim_team, dim_player, dim_venue, dim_date, dim_umpires, dim_wickets: DataFrames for dimension tables
+        dim_team, dim_player, dim_venue, dim_date, dim_umpires, dim_wickets, dim_stage: DataFrames for dimension tables
         """
         try:
             logger.info("Starting to load dimension tables...")
@@ -158,7 +159,7 @@ class Load:
             self.load_dataframe(dim_date, 'dim_date', if_exists='replace')
             self.load_dataframe(dim_umpires, 'dim_umpires', if_exists='replace')
             self.load_dataframe(dim_wickets, 'dim_wickets', if_exists='replace')
-
+            self.load_dataframe(dim_stage, 'dim_stage', if_exists='replace')    
             logger.info("All dimension tables loaded successfully.")
 
         except Exception as e:

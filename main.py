@@ -17,7 +17,7 @@ def run():
         # fact_deliveries, fact_matches = create_fact_tables(df, dim_team, dim_player, dim_venue, dim_date,dim_umpires,dim_wickets)
 
         with Load(connection_string=PYODBC_CONN_STR_WINDOWS ) as loader:
-            loader.load_dimension_tables(dim_team, dim_player, dim_venue, dim_date, dim_umpires, dim_wickets)
+            loader.load_dimension_tables(dim_team, dim_player, dim_venue, dim_date, dim_umpires, dim_wickets, dim_stage)
             # loader.load_fact_tables(fact_deliveries, fact_matches)
 
         logger.info("ETL completed successfully.")
