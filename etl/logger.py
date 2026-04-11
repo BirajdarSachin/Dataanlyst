@@ -12,7 +12,7 @@ def get_logger():
     if logger.hasHandlers():
         logger.handlers.clear()
 
-    file_handler = logging.FileHandler("ETL.log")
+    file_handler = logging.FileHandler("logs/ETL.log")
     file_handler.setLevel(logging.INFO)
 
     formatter = logging.Formatter(
