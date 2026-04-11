@@ -1,3 +1,10 @@
+"""
+Validation module for ETL data quality checks.
+
+This module provides functions to validate the integrity and quality
+of data during the ETL process.
+"""
+
 from etl.logger import get_logger
 
 logger = get_logger()

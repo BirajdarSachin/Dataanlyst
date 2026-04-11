@@ -1,17 +1,31 @@
-  DROP TABLE IF EXISTS dim_date ;
-  DROP TABLE IF EXISTS dim_player;
-  DROP TABLE IF EXISTS dim_venue;
-  DROP TABLE IF EXISTS dim_wickets;
-  DROP TABLE IF EXISTS dim_umpires;
-  DROP TABLE IF EXISTS dim_team;
-  DROP TABLE IF EXISTS dim_stage;
-  DROP TABLE IF EXISTS dim_seasons;
-  DROP TABLE IF EXISTS fact_batting;
-  DROP TABLE IF EXISTS fact_bowling;
-  DROP TABLE IF EXISTS fact_matches;
-  DROP TABLE IF EXISTS fact_deliveries;
+-- IPL Data Warehouse Schema
+-- This SQL script creates the database schema for the IPL Data Warehouse,
+-- including dimension and fact tables for cricket analytics.
 
-	 create table dim_date(date_id int primary key
+-- Create database if it doesn't exist and switch to it
+Create database if not exists ipl_dw;
+use ipl_dw;
+
+-- Drop existing tables to allow for clean recreation
+DROP TABLE IF EXISTS fact_batting;
+DROP TABLE IF EXISTS fact_bowling;
+DROP TABLE IF EXISTS fact_matches;
+DROP TABLE IF EXISTS fact_deliveries;
+DROP TABLE IF EXISTS dim_date ;
+DROP TABLE IF EXISTS dim_player;
+DROP TABLE IF EXISTS dim_venue;
+DROP TABLE IF EXISTS dim_wickets;
+DROP TABLE IF EXISTS dim_umpires;
+DROP TABLE IF EXISTS dim_team;
+DROP TABLE IF EXISTS dim_stage;
+DROP TABLE IF EXISTS dim_seasons;
+
+
+-- Create Dimension Tables
+-- Dimension tables store descriptive attributes for analysis
+
+-- Date dimension: stores date-related information for matches
+create table dim_date(date_id int primary key
 	  ,date date
       ,day varchar(225)
       ,month varchar(225)
@@ -19,29 +33,40 @@
       ,season varchar(225)
       );
 
-	create table dim_team( team_id int primary key,
+-- Team dimension: stores information about cricket teams
+create table dim_team( team_id int primary key,
 	  team_name varchar(225));
 
-	create table [dim_player]( [player_id] int primary key,
+-- Player dimension: stores information about cricket players
+create table [dim_player]( [player_id] int primary key,
 	  [player_name] varchar(225));
 
 	  
-	create table [dim_umpires]( [umpire_id] int primary key,
+-- Umpires dimension: stores information about match umpires
+create table [dim_umpires]( [umpire_id] int primary key,
 	  [umpire_name] varchar(225));
 
+-- Venue dimension: stores information about match venues
 	 create table [dim_venue]( [venue_id] int primary key,
 	  [venue] varchar(225));
 
+-- Wickets dimension: stores types of wicket dismissals
 	  create table [dim_wickets]( [wicket_id] int primary key,
 	  [wiket_type] varchar(225));
 
+-- Stage dimension: stores match stages (e.g., league, playoff, final)
 	  create table dim_stage(stage_id int primary key,
 	  stage varchar(225));
 
+-- Seasons dimension: stores IPL season information
 	  create table dim_seasons(season_id int primary key,
 	  season_name varchar(225));
 
-	CREATE TABLE fact_batting (
+-- Create Fact Tables
+-- Fact tables store measurable, quantitative data for analysis
+
+-- Batting fact table: stores aggregated batting statistics per player
+CREATE TABLE fact_batting (
     batter_id INT PRIMARY KEY,
     total_runs INT,
     no_balls INT,
@@ -57,6 +82,7 @@
 );
 
 
+-- Bowling fact table: stores aggregated bowling statistics per player
 CREATE TABLE fact_bowling (
     bowler_id INT PRIMARY KEY,
     no_wickets INT,
@@ -73,6 +99,7 @@ CREATE TABLE fact_bowling (
 );
 
 
+-- Matches fact table: stores match-level statistics and outcomes
 CREATE TABLE fact_matches (
     match_id INT PRIMARY KEY,
     date_id INT,
@@ -127,6 +154,7 @@ CREATE TABLE fact_matches (
         REFERENCES dim_umpires(umpire_id)
 );
 
+-- Deliveries fact table: stores ball-by-ball delivery data (most granular)
 CREATE TABLE fact_deliveries (
     delivery_id VARCHAR(50) PRIMARY KEY,
     match_id INT,

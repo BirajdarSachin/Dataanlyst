@@ -1,3 +1,10 @@
+"""
+Main entry point for the IPL Data Warehouse ETL process.
+
+This script orchestrates the Extract, Transform, Load (ETL) operations
+for processing IPL cricket data and loading it into a SQL Server data warehouse.
+"""
+
 from etl.extract import extract_data as extract
 from etl.transform import clean_data , create_dim_tables, create_fact_tables
 from etl.load import Load

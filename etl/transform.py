@@ -1,3 +1,10 @@
+"""
+Data transformation module for IPL Data Warehouse.
+
+This module contains functions to clean, transform, and create dimension
+and fact tables from the extracted IPL cricket data.
+"""
+
 import pandas as pd
 from etl.logger import get_logger
 logger = get_logger()
